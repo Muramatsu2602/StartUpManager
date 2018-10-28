@@ -178,7 +178,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Aquamarine;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(395, 431);
+            this.button2.Location = new System.Drawing.Point(396, 431);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 37);
