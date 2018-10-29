@@ -65,6 +65,7 @@ namespace StartupManager
             u.Nome = txtNome.Text;
             u.Senha = result;
             u.Email = txtEmail.Text;
+            u.Cpf = mskCPF.Text;
             u.Cargo = comboBox1.SelectedItem.ToString();
             u.DataNasc = dtpData.ToString();
 

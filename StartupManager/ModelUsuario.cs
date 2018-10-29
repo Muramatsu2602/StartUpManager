@@ -22,7 +22,8 @@ namespace StartupManager
             param.Add(u.DataNasc);
             param.Add(u.Cpf);
             param.Add(u.Sexo);
-            param.Add(u.DataNasc);
+            param.Add(u.Cargo);
+            ConexaoBanco.Executar(sql, param);
             return u.IdUser;
         }
     }
