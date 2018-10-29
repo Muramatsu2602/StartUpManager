@@ -63,11 +63,11 @@ namespace StartupManager
             frmLogin login = new frmLogin();
             u.Sexo = (radFem.Checked) ? 'F' : 'M';
             u.Nome = txtNome.Text;
-            u.Senha = result;
+            u.Senha = result; 
             u.Email = txtEmail.Text;
             u.Cpf = mskCPF.Text;
             u.Cargo = comboBox1.SelectedItem.ToString();
-            u.DataNasc = dtpData.ToString();
+            u.DataNasc = dtpData.Value;
 
             try
             {
