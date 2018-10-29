@@ -70,7 +70,8 @@ namespace StartupManager
 
             try
             {
-               // chamar metodo do model
+                ModelUsuario i = new ModelUsuario();
+                i.Insert();
                 MessageBox.Show("Dados salvos com sucesso!", "StartUpManager 72B",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
                this.Hide();
