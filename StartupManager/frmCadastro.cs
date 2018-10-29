@@ -15,7 +15,8 @@ namespace StartupManager
     public partial class frmCadastro : MaterialSkin.Controls.MaterialForm
     {
 
-        private bool novoCadastro = false;//É true na função novo Cadastro                      
+        private bool novoCadastro = false;//É true na função novo Cadastro   
+        Usuario u;
     
         public frmCadastro()
         {
@@ -44,6 +45,7 @@ namespace StartupManager
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            u = new Usuario();
             string result;
             using (MD5 hash = MD5.Create())
             {
@@ -59,31 +61,16 @@ namespace StartupManager
             }
 
             frmLogin login = new frmLogin();
-              string sql = "insert into usuario" +
-             "(email, nome, senha,data_nasc,cpf,sexo,cargo,excluido)"+ 
-             "values(@1, @2, @3, @4, @5,@6,@7,@8)";
-
-            List<object> param = new List<object>();
-
-            param.Add(txtNome.Text);
-            param.Add(txtEmail.Text);
-            param.Add(result);
-            param.Add(dtpData.Value);
-            param.Add(mskCPF.Text);
-            if (radFem.Checked == true)
-            {
-                param.Add("F");
-            }
-            else
-            {
-                param.Add("M");
-            }
-            param.Add(comboBox1.SelectedItem.ToString());
-            param.Add(true);
+            u.Sexo = (radFem.Checked) ? 'F' : 'M';
+            u.Nome = txtNome.Text;
+            u.Senha = result;
+            u.Email = txtEmail.Text;
+            u.Cargo = comboBox1.SelectedItem.ToString();
+            u.DataNasc = dtpData.ToString();
 
             try
             {
-                ConexaoBanco.Executar(sql, param);
+               // chamar metodo do model
                 MessageBox.Show("Dados salvos com sucesso!", "StartUpManager 72B",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
                this.Hide();
