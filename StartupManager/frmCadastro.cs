@@ -71,7 +71,7 @@ namespace StartupManager
             try
             {
                 ModelUsuario i = new ModelUsuario();
-                i.Insert();
+                i.Insert(u);
                 MessageBox.Show("Dados salvos com sucesso!", "StartUpManager 72B",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
                this.Hide();
