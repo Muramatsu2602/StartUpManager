@@ -26,5 +26,9 @@ namespace StartupManager
             ConexaoBanco.Executar(sql, param);
             return u.IdUser;
         }
+        public int Login(Usuario u)
+            {
+                
+            }
     }
 }
