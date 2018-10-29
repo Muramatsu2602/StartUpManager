@@ -17,7 +17,7 @@ namespace StartupManager
 
         private bool novoCadastro = false;//É true na função novo Cadastro   
         Usuario u;
-    
+
         public frmCadastro()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace StartupManager
         // a conexao é executada
         private void frmCadastro_Load(object sender, EventArgs e)
         {
-            ConexaoBanco.Conectar();  
+            ConexaoBanco.Conectar();
         }
         private void frmCadastro_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -75,13 +75,13 @@ namespace StartupManager
                 i.Insert(u);
                 MessageBox.Show("Dados salvos com sucesso!", "StartUpManager 72B",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
-               this.Hide();
-               login.Show();
+                this.Hide();
+                login.Show();
 
             }
             catch (Exception er)
             {
-                MessageBox.Show("Erro de execução da QUERY !!! "+er.Message, "StartUpManager 72B",
+                MessageBox.Show("Erro de execução da QUERY !!! " + er.Message, "StartUpManager 72B",
                   MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
