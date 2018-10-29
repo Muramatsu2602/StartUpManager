@@ -60,10 +60,9 @@ namespace StartupManager
                 );
             }
 
-            frmLogin login = new frmLogin();
             u.Sexo = (radFem.Checked) ? 'F' : 'M';
             u.Nome = txtNome.Text;
-            u.Senha = result; 
+            u.Senha = result;
             u.Email = txtEmail.Text;
             u.Cpf = mskCPF.Text;
             u.Cargo = comboBox1.SelectedItem.ToString();
@@ -71,6 +70,7 @@ namespace StartupManager
 
             try
             {
+                frmLogin login = new frmLogin();
                 ModelUsuario i = new ModelUsuario();
                 i.Insert(u);
                 MessageBox.Show("Dados salvos com sucesso!", "StartUpManager 72B",

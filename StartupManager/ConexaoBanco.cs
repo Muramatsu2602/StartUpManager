@@ -16,9 +16,9 @@ namespace StartupManager
         static string stringConexao =
             "Server = 127.0.0.1;" +
             "Port = 5432;" +
-            "Database = 2018_72b_Apeiron;" +
+            "Database = startupManager;" +
             "User ID = postgres;" +
-            "password = a;";
+            "password = sqladmin;";//escola:sqladmin
 
         static NpgsqlConnection cn = new NpgsqlConnection();
 
