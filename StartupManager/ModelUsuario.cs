@@ -8,7 +8,7 @@ namespace StartupManager
 {
     class ModelUsuario
     {
-        public int Insert(Usuario u)
+        public void Insert(Usuario u)
         {
             string sql = "insert into usuario" +
             "(email, nome, senha,data_nasc,cpf,sexo,cargo)" +
@@ -24,11 +24,8 @@ namespace StartupManager
             param.Add(u.Sexo);
             param.Add(u.Cargo);
             ConexaoBanco.Executar(sql, param);
-            return u.IdUser;
+            // return u.IdUser;
         }
-        public int Login(Usuario u)
-            {
-                
-            }
+ 
     }
 }

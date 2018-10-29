@@ -16,8 +16,7 @@ namespace StartupManager
 {
     public partial class frmLogin : MaterialSkin.Controls.MaterialForm
     {
-        Usuario u;
-
+        
         private void frmCadastro_Load(object sender, EventArgs e)
         {
             try

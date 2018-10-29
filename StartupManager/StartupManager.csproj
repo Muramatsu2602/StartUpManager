@@ -86,7 +86,10 @@
     <Compile Include="frmSplashScreen.Designer.cs">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelCanvas.cs" />
+    <Compile Include="ModelProjeto.cs" />
     <Compile Include="ModelUsuario.cs" />
+    <Compile Include="ModelUsuarioProjeto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Projeto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
