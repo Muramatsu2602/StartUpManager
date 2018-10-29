@@ -70,7 +70,7 @@ namespace StartupManager
 
             try
             {
-                frmLogin login = new frmLogin();
+                frmLogin login = new frmLogin(u.Cpf);
                 ModelUsuario i = new ModelUsuario();
                 i.Insert(u);
                 MessageBox.Show("Dados salvos com sucesso!", "StartUpManager 72B",

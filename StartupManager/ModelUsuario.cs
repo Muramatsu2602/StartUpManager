@@ -25,10 +25,5 @@ namespace StartupManager
             param.Add(u.Cargo);
             ConexaoBanco.Executar(sql, param);
         }
-        /*public int Login(Usuario u)
-            {
-                
-            }*/
-       
     }
 }
