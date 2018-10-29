@@ -13,7 +13,7 @@ namespace StartupManager
         private String nome;
         private String senha;
         private String email;
-        private String dataNasc;
+        private DateTime dataNasc;
         private String cpf;
         private String cargo;
         private Boolean data_exclusao;
@@ -24,7 +24,7 @@ namespace StartupManager
         public string Nome { get => nome; set => nome = value; }
         public string Senha { get => senha; set => senha = value; }
         public string Email { get => email; set => email = value; }
-        public string DataNasc { get => dataNasc; set => dataNasc = value; }
+        public DateTime DataNasc { get => dataNasc; set => dataNasc = value; }
         public string Cpf { get => cpf; set => cpf = value; }
         public string Cargo { get => cargo; set => cargo = value; }
         public bool Data_exclusao { get => data_exclusao; set => data_exclusao = value; }

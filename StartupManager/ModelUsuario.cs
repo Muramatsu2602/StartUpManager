@@ -12,7 +12,7 @@ namespace StartupManager
         {
             string sql = "insert into usuario" +
             "(email, nome, senha,data_nasc,cpf,sexo,cargo)" +
-            "values(@1, @2, @3, @4, @5,@6,@7,@8)";
+            "values(@1, @2, @3, @4, @5,@6,@7)";
 
             List<object> param = new List<object>();
 
