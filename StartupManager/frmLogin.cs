@@ -32,7 +32,7 @@ namespace StartupManager
 
         }
 
-        public frmLogin(string cpf)
+        public frmLogin()
         {
            
             InitializeComponent();
@@ -89,7 +89,8 @@ namespace StartupManager
                     {
                         MessageBox.Show("Login efetuado!", "StartUpManager 72B",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        var dados = ConexaoBanco.SelecionarDataTable(sql);
+                       
                         this.Hide();
                         frmMenu menu = new frmMenu();
                         menu.Show();
