@@ -15,6 +15,7 @@ namespace StartupManager
         private String dataCriacao;
         private String dataExcluido;
         private int id_ceo;
+        private String descricao;
 
         public string UltimaAlteracao { get => ultimaAlteracao; set => ultimaAlteracao = value; }
         public int IdCanvas { get => idCanvas; set => idCanvas = value; }

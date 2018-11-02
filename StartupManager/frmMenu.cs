@@ -12,9 +12,29 @@ namespace StartupManager
 {
     public partial class frmMenu : MaterialSkin.Controls.MaterialForm
     {
-        public frmMenu()
+        ModelProjeto mp = new ModelProjeto();
+        private Usuario u;
+        public frmMenu(Usuario u)
         {
+            this.u = u;
             InitializeComponent();
+            CarregaGrid();
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void CarregaGrid()
+        {
+            dgvDados.DataSource = mp.listarTodos(u);
+            //dgvDados.Columns[0].ReadOnly = true;
         }
     }
 }

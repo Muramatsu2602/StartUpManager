@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,14 +10,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
- using System.Security.Cryptography;
+using System.Security.Cryptography;
 
 
 namespace StartupManager
 {
     public partial class frmLogin : MaterialSkin.Controls.MaterialForm
     {
-        
+        private Usuario u;
         private void frmCadastro_Load(object sender, EventArgs e)
         {
             try
@@ -34,16 +35,16 @@ namespace StartupManager
 
         public frmLogin()
         {
-           
+
             InitializeComponent();
             this.Focus();
         }
-  
+
         private void Limpa()
         {
             txtEmail.Clear();
             txtSenha.Clear();
-           
+
         }
         private void btnCancela_Click(object sender, EventArgs e)
         {
@@ -58,7 +59,7 @@ namespace StartupManager
 
         private void btnEntra_Click(object sender, EventArgs e)
         {
-       
+
             // teste de consistencia basico (enquanto nao há verificacao real do  bd)
 
             if (!String.IsNullOrWhiteSpace(txtEmail.Text))
@@ -84,17 +85,30 @@ namespace StartupManager
                         );
                     }
                     param.Add(result);
-
-                    if (ConexaoBanco.Selecionar(sql, param).Read())
+                    var dados = ConexaoBanco.Selecionar(sql, param);
+                    if (dados.Read())
                     {
+
                         MessageBox.Show("Login efetuado!", "StartUpManager 72B",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        var dados = ConexaoBanco.SelecionarDataTable(sql);
-                       
+                        u = new Usuario();
+                        u.IdUser = Int64.Parse(dados["id_user"].ToString());
+                        u.Nome = (string)dados["nome"];
+                        u.Email = (string)dados["email"];
+                        u.Cargo = (string)dados["cargo"];
+                        u.Cpf = (string)dados["cpf"];
+                        u.Email = (string)dados["email"];
+                        u.DataNasc = dados["data_nasc"].ToString();
+                        u.Data_exclusao = dados["data_exclusao"].ToString();
+                        u.Senha = (string)dados["senha"];
+
+                        ConexaoBanco.Desconectar();
                         this.Hide();
-                        frmMenu menu = new frmMenu();
+                        frmMenu menu = new frmMenu(u);
                         menu.Show();
                         Limpa();
+                      
+
                     }
                     else
                     {
@@ -129,7 +143,6 @@ namespace StartupManager
         {
             frmCadastro cad = new frmCadastro();
             cad.Show();
-            this.Hide();
         }
     }
 }

@@ -66,7 +66,7 @@ namespace StartupManager
             u.Email = txtEmail.Text;
             u.Cpf = mskCPF.Text;
             u.Cargo = comboBox1.SelectedItem.ToString();
-            u.DataNasc = dtpData.Value;
+            u.DataNasc = dtpData.Value.ToString("yyyy-MM-dd");
 
             try
             {

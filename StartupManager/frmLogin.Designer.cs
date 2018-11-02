@@ -62,7 +62,7 @@
             this.btnEntra.BackColor = System.Drawing.Color.Aquamarine;
             this.btnEntra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEntra.Location = new System.Drawing.Point(128, 343);
+            this.btnEntra.Location = new System.Drawing.Point(115, 351);
             this.btnEntra.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEntra.Name = "btnEntra";
             this.btnEntra.Size = new System.Drawing.Size(116, 48);
@@ -75,7 +75,7 @@
             // 
             this.btnCancela.BackColor = System.Drawing.Color.Aquamarine;
             this.btnCancela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancela.Location = new System.Drawing.Point(252, 343);
+            this.btnCancela.Location = new System.Drawing.Point(239, 351);
             this.btnCancela.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancela.Name = "btnCancela";
             this.btnCancela.Size = new System.Drawing.Size(116, 48);
@@ -105,7 +105,7 @@
             this.txtSenha.Location = new System.Drawing.Point(14, 271);
             this.txtSenha.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '\0';
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.SelectedText = "";
             this.txtSenha.SelectionLength = 0;
             this.txtSenha.SelectionStart = 0;

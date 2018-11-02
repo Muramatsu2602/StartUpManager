@@ -24,6 +24,7 @@ namespace StartupManager
             param.Add(u.Sexo);
             param.Add(u.Cargo);
             ConexaoBanco.Executar(sql, param);
+            ConexaoBanco.Desconectar();
         }
     }
 }
