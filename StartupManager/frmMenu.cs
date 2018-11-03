@@ -23,7 +23,7 @@ namespace StartupManager
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -35,6 +35,19 @@ namespace StartupManager
         {
             dgvDados.DataSource = mp.listarTodos(u);
             //dgvDados.Columns[0].ReadOnly = true;
+        }
+
+        private void btnCanvas_Click(object sender, EventArgs e)
+        {
+            frmCanvasInterativo canvas = new frmCanvasInterativo();
+            canvas.ShowDialog();
+        }
+
+        private void NovoAlterar(object sender, EventArgs e)
+        {
+            frmCadastroAlteracaoProjeto projeto = new frmCadastroAlteracaoProjeto();
+            projeto.ShowDialog();
+
         }
     }
 }

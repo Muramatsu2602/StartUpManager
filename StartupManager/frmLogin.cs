@@ -141,6 +141,7 @@ namespace StartupManager
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            ConexaoBanco.Desconectar();
             frmCadastro cad = new frmCadastro();
             cad.Show();
         }

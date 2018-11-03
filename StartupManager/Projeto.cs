@@ -24,5 +24,6 @@ namespace StartupManager
         public string DataCriacao { get => dataCriacao; set => dataCriacao = value; }
         public string DataExcluido { get => dataExcluido; set => dataExcluido = value; }
         public int Id_ceo { get => id_ceo; set => id_ceo = value; }
+        public string Descricao { get => descricao; set => descricao = value; }
     }
 }
