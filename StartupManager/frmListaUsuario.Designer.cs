@@ -1,6 +1,6 @@
 ﻿namespace StartupManager
 {
-    partial class frmMenu
+    partial class frmListaUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.dgvDados = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLimpar = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -41,26 +40,27 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnCanvas = new System.Windows.Forms.Button();
-            this.btnProjeto = new System.Windows.Forms.PictureBox();
-            this.btnTime = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnProjeto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnTime)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDados
             // 
+            this.dgvDados.AllowUserToAddRows = false;
+            this.dgvDados.AllowUserToDeleteRows = false;
+            this.dgvDados.AllowUserToResizeRows = false;
             this.dgvDados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dgvDados.Location = new System.Drawing.Point(13, 118);
             this.dgvDados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvDados.Name = "dgvDados";
+            this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDados.ShowEditingIcon = false;
             this.dgvDados.Size = new System.Drawing.Size(867, 559);
             this.dgvDados.TabIndex = 0;
             // 
@@ -110,6 +110,8 @@
             // 
             // txtConsulta
             // 
+            this.txtConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtConsulta.Location = new System.Drawing.Point(296, 30);
             this.txtConsulta.Name = "txtConsulta";
             this.txtConsulta.Size = new System.Drawing.Size(502, 31);
@@ -143,9 +145,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 37);
+            this.label1.Size = new System.Drawing.Size(152, 37);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Projetos";
+            this.label1.Text = "Usuários";
             // 
             // materialDivider1
             // 
@@ -164,110 +166,42 @@
             // 
             this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnNovo.Location = new System.Drawing.Point(461, 77);
+            this.btnNovo.Location = new System.Drawing.Point(598, 78);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(90, 33);
             this.btnNovo.TabIndex = 11;
             this.btnNovo.Text = "&Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.NovoAlterar);
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnAlterar
             // 
             this.btnAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterar.BackColor = System.Drawing.Color.Yellow;
-            this.btnAlterar.Location = new System.Drawing.Point(557, 76);
+            this.btnAlterar.Location = new System.Drawing.Point(694, 77);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(90, 33);
             this.btnAlterar.TabIndex = 12;
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
-            this.btnAlterar.Click += new System.EventHandler(this.NovoAlterar);
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.Location = new System.Drawing.Point(653, 76);
+            this.button1.Location = new System.Drawing.Point(790, 77);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 33);
             this.button1.TabIndex = 13;
             this.button1.Text = "&Deletar";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // btnCanvas
-            // 
-            this.btnCanvas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCanvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnCanvas.Location = new System.Drawing.Point(790, 76);
-            this.btnCanvas.Name = "btnCanvas";
-            this.btnCanvas.Size = new System.Drawing.Size(90, 33);
-            this.btnCanvas.TabIndex = 14;
-            this.btnCanvas.Text = "&Canvas";
-            this.btnCanvas.UseVisualStyleBackColor = false;
-            this.btnCanvas.Click += new System.EventHandler(this.btnCanvas_Click);
-            // 
-            // btnProjeto
-            // 
-            this.btnProjeto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProjeto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnProjeto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProjeto.Image = ((System.Drawing.Image)(resources.GetObject("btnProjeto.Image")));
-            this.btnProjeto.Location = new System.Drawing.Point(925, 118);
-            this.btnProjeto.Name = "btnProjeto";
-            this.btnProjeto.Size = new System.Drawing.Size(70, 70);
-            this.btnProjeto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnProjeto.TabIndex = 15;
-            this.btnProjeto.TabStop = false;
-            // 
-            // btnTime
-            // 
-            this.btnTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnTime.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTime.Image = ((System.Drawing.Image)(resources.GetObject("btnTime.Image")));
-            this.btnTime.Location = new System.Drawing.Point(925, 233);
-            this.btnTime.Name = "btnTime";
-            this.btnTime.Size = new System.Drawing.Size(70, 70);
-            this.btnTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnTime.TabIndex = 16;
-            this.btnTime.TabStop = false;
-            this.btnTime.Click += new System.EventHandler(this.btnTime_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(898, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 25);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Projetos";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(894, 205);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 25);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Usuários";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // frmMenu
+            // frmListaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1021, 768);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnTime);
-            this.Controls.Add(this.btnProjeto);
-            this.Controls.Add(this.btnCanvas);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnNovo);
@@ -277,17 +211,13 @@
             this.Controls.Add(this.dgvDados);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmMenu";
+            this.Name = "frmListaUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StartUp Manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
-            this.Load += new System.EventHandler(this.frmMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnProjeto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnTime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,10 +237,5 @@
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnCanvas;
-        private System.Windows.Forms.PictureBox btnProjeto;
-        private System.Windows.Forms.PictureBox btnTime;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
     }
 }

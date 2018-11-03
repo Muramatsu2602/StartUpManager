@@ -37,9 +37,8 @@ namespace StartupManager
         {
 
             InitializeComponent();
-            this.Focus();
+            txtEmail.Focus();
         }
-
         private void Limpa()
         {
             txtEmail.Clear();
@@ -89,8 +88,7 @@ namespace StartupManager
                     if (dados.Read())
                     {
 
-                        MessageBox.Show("Login efetuado!", "StartUpManager 72B",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
                         u = new Usuario();
                         u.IdUser = Int64.Parse(dados["id_user"].ToString());
                         u.Nome = (string)dados["nome"];
@@ -101,7 +99,7 @@ namespace StartupManager
                         u.DataNasc = dados["data_nasc"].ToString();
                         u.Data_exclusao = dados["data_exclusao"].ToString();
                         u.Senha = (string)dados["senha"];
-
+                        u.Sexo = (char) dados["sexo"];
                         ConexaoBanco.Desconectar();
                         this.Hide();
                         frmMenu menu = new frmMenu(u);
@@ -142,8 +140,15 @@ namespace StartupManager
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             ConexaoBanco.Desconectar();
-            frmCadastro cad = new frmCadastro();
+            frmCadastro cad = new frmCadastro(0);
             cad.Show();
+        }
+
+       
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            txtEmail.Focus();
         }
     }
 }

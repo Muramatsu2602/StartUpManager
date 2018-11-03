@@ -49,5 +49,11 @@ namespace StartupManager
             projeto.ShowDialog();
 
         }
+
+        private void btnTime_Click(object sender, EventArgs e)
+        {
+            frmListaUsuario listar = new frmListaUsuario();
+            listar.Show();
+        }
     }
 }

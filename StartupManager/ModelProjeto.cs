@@ -18,7 +18,7 @@ namespace StartupManager
                 ConexaoBanco.Conectar();
 
                 String sql = "SELECT id_projeto AS \"ID\", nome AS \"NOME\", data_criacao AS \"CRIAÇÃO\",id_ceo AS \"CEO\" FROM projeto ";
-                sql += "WHERE data_exclusao IS NULL AND id_ceo=" + u.IdUser;
+                sql += "WHERE data_excluido IS NULL AND id_ceo=" + u.IdUser;
                 dt = ConexaoBanco.SelecionarDataTable(sql);
             }
             catch (Exception ex)

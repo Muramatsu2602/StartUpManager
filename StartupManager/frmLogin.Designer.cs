@@ -66,7 +66,7 @@
             this.btnEntra.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEntra.Name = "btnEntra";
             this.btnEntra.Size = new System.Drawing.Size(116, 48);
-            this.btnEntra.TabIndex = 4;
+            this.btnEntra.TabIndex = 2;
             this.btnEntra.Text = "&Entrar";
             this.btnEntra.UseVisualStyleBackColor = false;
             this.btnEntra.Click += new System.EventHandler(this.btnEntra_Click);
@@ -79,7 +79,7 @@
             this.btnCancela.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancela.Name = "btnCancela";
             this.btnCancela.Size = new System.Drawing.Size(116, 48);
-            this.btnCancela.TabIndex = 5;
+            this.btnCancela.TabIndex = 3;
             this.btnCancela.Text = "&Cancelar";
             this.btnCancela.UseVisualStyleBackColor = false;
             this.btnCancela.Click += new System.EventHandler(this.btnCancela_Click);
@@ -93,7 +93,7 @@
             this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(96, 48);
-            this.btnCadastrar.TabIndex = 11;
+            this.btnCadastrar.TabIndex = 4;
             this.btnCadastrar.Text = "&Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -110,7 +110,7 @@
             this.txtSenha.SelectionLength = 0;
             this.txtSenha.SelectionStart = 0;
             this.txtSenha.Size = new System.Drawing.Size(453, 23);
-            this.txtSenha.TabIndex = 12;
+            this.txtSenha.TabIndex = 1;
             this.txtSenha.UseSystemPasswordChar = false;
             // 
             // txtEmail
@@ -125,7 +125,7 @@
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.Size = new System.Drawing.Size(453, 23);
-            this.txtEmail.TabIndex = 13;
+            this.txtEmail.TabIndex = 0;
             this.txtEmail.UseSystemPasswordChar = false;
             // 
             // frmLogin
@@ -146,6 +146,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StartUpManager Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

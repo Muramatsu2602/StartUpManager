@@ -44,7 +44,7 @@
             this.txtNome = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtSenha = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
@@ -89,7 +89,7 @@
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(117, 37);
-            this.btnSalvar.TabIndex = 24;
+            this.btnSalvar.TabIndex = 9;
             this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -102,7 +102,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(117, 37);
-            this.btnCancelar.TabIndex = 25;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -115,7 +115,7 @@
             this.mskCPF.Mask = "000.000.000-00";
             this.mskCPF.Name = "mskCPF";
             this.mskCPF.Size = new System.Drawing.Size(148, 26);
-            this.mskCPF.TabIndex = 60;
+            this.mskCPF.TabIndex = 4;
             // 
             // radFem
             // 
@@ -124,19 +124,19 @@
             this.radFem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radFem.Name = "radFem";
             this.radFem.Size = new System.Drawing.Size(92, 24);
-            this.radFem.TabIndex = 59;
-            this.radFem.TabStop = true;
+            this.radFem.TabIndex = 7;
             this.radFem.Text = "Feminino";
             this.radFem.UseVisualStyleBackColor = true;
             // 
             // radMasc
             // 
             this.radMasc.AutoSize = true;
+            this.radMasc.Checked = true;
             this.radMasc.Location = new System.Drawing.Point(442, 298);
             this.radMasc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radMasc.Name = "radMasc";
             this.radMasc.Size = new System.Drawing.Size(98, 24);
-            this.radMasc.TabIndex = 58;
+            this.radMasc.TabIndex = 6;
             this.radMasc.TabStop = true;
             this.radMasc.Text = "Masculino";
             this.radMasc.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 37);
-            this.button2.TabIndex = 62;
+            this.button2.TabIndex = 11;
             this.button2.Text = "&Sair";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -200,7 +200,7 @@
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.Size = new System.Drawing.Size(380, 23);
-            this.txtEmail.TabIndex = 64;
+            this.txtEmail.TabIndex = 1;
             this.txtEmail.UseSystemPasswordChar = false;
             // 
             // txtNome
@@ -215,7 +215,7 @@
             this.txtNome.SelectionLength = 0;
             this.txtNome.SelectionStart = 0;
             this.txtNome.Size = new System.Drawing.Size(380, 23);
-            this.txtNome.TabIndex = 65;
+            this.txtNome.TabIndex = 3;
             this.txtNome.UseSystemPasswordChar = false;
             // 
             // txtSenha
@@ -230,7 +230,7 @@
             this.txtSenha.SelectionLength = 0;
             this.txtSenha.SelectionStart = 0;
             this.txtSenha.Size = new System.Drawing.Size(380, 23);
-            this.txtSenha.TabIndex = 66;
+            this.txtSenha.TabIndex = 5;
             this.txtSenha.UseSystemPasswordChar = false;
             // 
             // label6
@@ -244,20 +244,21 @@
             this.label6.TabIndex = 67;
             this.label6.Text = "Cargo";
             // 
-            // comboBox1
+            // cmbCargo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbCargo.FormattingEnabled = true;
+            this.cmbCargo.Items.AddRange(new object[] {
+            "Selecione...",
             "CEO",
             "Contador",
             "Programador",
             "Marketing",
             "Advogado",
             "Designer"});
-            this.comboBox1.Location = new System.Drawing.Point(439, 371);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 69;
+            this.cmbCargo.Location = new System.Drawing.Point(439, 371);
+            this.cmbCargo.Name = "cmbCargo";
+            this.cmbCargo.Size = new System.Drawing.Size(121, 28);
+            this.cmbCargo.TabIndex = 8;
             // 
             // dtpData
             // 
@@ -266,7 +267,7 @@
             this.dtpData.Location = new System.Drawing.Point(441, 161);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(119, 26);
-            this.dtpData.TabIndex = 70;
+            this.dtpData.TabIndex = 2;
             // 
             // frmCadastro
             // 
@@ -274,7 +275,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 482);
             this.Controls.Add(this.dtpData);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbCargo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtNome);
@@ -320,7 +321,7 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNome;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSenha;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCargo;
         private System.Windows.Forms.DateTimePicker dtpData;
     }
 }
