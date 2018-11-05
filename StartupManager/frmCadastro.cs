@@ -14,15 +14,14 @@ namespace StartupManager
 {
     public partial class frmCadastro : MaterialSkin.Controls.MaterialForm
     {
+
         private bool novoCadastro = false;//É true na função novo Cadastro   
         Usuario u;
-        public bool verifica = false;
         private ModelUsuario model;
-        private int id;
-        private frmListaUsuario listagem;
         public frmCadastro(int id)
         {
             InitializeComponent();
+<<<<<<< HEAD
             this.id = id;
             /* VISUAL*/
             var skinMenager = MaterialSkin.MaterialSkinManager.Instance;
@@ -36,23 +35,20 @@ namespace StartupManager
                 MaterialSkin.TextShade.WHITE
             );
             /**/
+=======
+>>>>>>> parent of 1387021... Alteracao de Usuario Funcionando
             try
             {
 
                 if (id != 0)
                 {
                     this.Text = "Alteração";
-                    btnSalvar.Text = "Alterar";
                     model = new ModelUsuario();
-
                     u = model.BuscaId(id);
                     // exibir dados no formulario
                     txtEmail.Text = u.Email;
                     txtNome.Text = u.Nome;
                     mskCPF.Text = u.Cpf;
-
-                    txtSenha.Visible = true;
-
                     dtpData.Value = DateTime.Parse(u.DataNasc);
                     if (u.Sexo.ToString().Equals("M"))
                     {
@@ -67,15 +63,16 @@ namespace StartupManager
                 else
                 {
                     this.Text = "Cadastro";
-
                     cmbCargo.SelectedIndex = 0;
                     radMasc.Checked = true;
                 }
+
             }
             catch (Exception e)
             {
                 throw e;
             }
+
         }
         // a conexao é executada
         private void frmCadastro_Load(object sender, EventArgs e)
@@ -98,76 +95,56 @@ namespace StartupManager
         {
             if (validar())
             {
-                if (id == 0)
+                u = new Usuario();
+                string result;
+                using (MD5 hash = MD5.Create())
                 {
+<<<<<<< HEAD
                     u = new Usuario();
                     pegaCampos();
-
-                    try
-                    {
-                        frmLogin login = new frmLogin();
-                        ModelUsuario i = new ModelUsuario();
-                        i.Insert(u);
-                        MessageBox.Show("Dados salvos com sucesso!", "StartUpManager 72B",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
-                        if (verifica)
-                        {
-                            login.Show();
-
-                        }
-                        listagem = new frmListaUsuario();
-                        listagem.CarregaGrid();
-                        this.Close();
-                    }
-                    catch (Exception er)
-                    {
-                        MessageBox.Show("Erro de execução da QUERY !!! " + er.Message, "StartUpManager 72B",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    try
-                    {
-                        pegaCampos();
-                        model.Update(u);
-                        MessageBox.Show("Usuario Alterado");
-                        this.Close();
-                    }
-                    catch (Exception exception)
-                    {
-                        MessageBox.Show("Erro de execução da QUERY !!! " + exception.Message, "StartUpManager 72B",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-        }
-
-        private void pegaCampos()
-        {
-            string result;
-            using (MD5 hash = MD5.Create())
-            {
-                result = String.Join
-                (
-                    "",
-                    from ba in hash.ComputeHash
+=======
+                    result = String.Join
                     (
-                        Encoding.UTF8.GetBytes(txtSenha.Text)
-                    )
-                    select ba.ToString("x2")
-                );
+                        "",
+                        from ba in hash.ComputeHash
+                        (
+                            Encoding.UTF8.GetBytes(txtSenha.Text)
+                        )
+                        select ba.ToString("x2")
+                    );
+                }
+
+                u.Sexo = (radFem.Checked) ? 'F' : 'M';
+                u.Nome = txtNome.Text;
+                u.Senha = result;
+                u.Email = txtEmail.Text;
+                u.Cpf = mskCPF.Text;
+                u.Cargo = cmbCargo.SelectedItem.ToString();
+                u.DataNasc = dtpData.Value.ToString("yyyy-MM-dd");
+
+                try
+                {
+                    frmLogin login = new frmLogin();
+                    ModelUsuario i = new ModelUsuario();
+                    i.Insert(u);
+                    MessageBox.Show("Dados salvos com sucesso!", "StartUpManager 72B",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    login.Show();
+>>>>>>> parent of 1387021... Alteracao de Usuario Funcionando
+
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show("Erro de execução da QUERY !!! " + er.Message, "StartUpManager 72B",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
 
-            u.Sexo = (radFem.Checked) ? 'F' : 'M';
-            u.Nome = txtNome.Text;
-            u.Senha = result;
-            u.Email = txtEmail.Text;
-            u.Cpf = mskCPF.Text;
-            u.Cargo = cmbCargo.SelectedItem.ToString();
-            u.DataNasc = dtpData.Value.ToString("yyyy-MM-dd");
+
         }
+
         private bool validar()
         {
             if (String.IsNullOrWhiteSpace(txtEmail.Text))
@@ -181,7 +158,7 @@ namespace StartupManager
                 MessageBox.Show("Preencha o campo Nome!");
                 return false;
             }
-            if (String.IsNullOrWhiteSpace(txtSenha.Text) && id == 0)
+            if (String.IsNullOrWhiteSpace(txtSenha.Text))
             {
                 MessageBox.Show("Preencha o campo Senha!");
                 return false;

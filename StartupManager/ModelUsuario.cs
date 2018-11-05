@@ -71,44 +71,35 @@ namespace StartupManager
                     u.DataNasc = dados["data_nasc"].ToString();
                     u.Data_exclusao = dados["data_exclusao"].ToString();
                     u.Senha = (string)dados["senha"];
-                    u.Sexo = Char.Parse(dados["sexo"].ToString());
+                    u.Sexo = Char.Parse(dados["sexo"].ToString()) ;
 
                     ConexaoBanco.Desconectar();
                 }
+
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao buscar Usuario de ID:  " + id + "\n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+            ConexaoBanco.Desconectar();
+
             return u;
-           
         }
 
         public void Update(Usuario u)
         {
             try
             {
-                String sql = "UPDATE usuario SET ";
-                sql += " nome = '" + u.Nome + "', ";
-                sql += " senha  = '" + u.Senha + "', ";
-                sql += " email  = '" + u.Email + "', ";
-                sql += " data_nasc  = '" + u.DataNasc + "', ";
-                sql += " cpf  = '" + u.Cpf + "', ";
-                sql += " cargo  = '" + u.Cargo + "', ";
-                sql += " sexo  = '" + u.Sexo + "' ";
-                sql += " WHERE id_user = " + u.IdUser + ";"; 
+                ConexaoBanco.Conectar();
+                String sql = "UPDATE usuarios SET ";
+                sql += " WHERE id_user = " + u.IdUser + ";";
+                sql = sql.Replace("''", "NULL");
                 ConexaoBanco.Executar(sql);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao atualizar o Usuario !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-            finally
-            {
-                ConexaoBanco.Desconectar();
+                MessageBox.Show("Erro ao atualizar o Serviço !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

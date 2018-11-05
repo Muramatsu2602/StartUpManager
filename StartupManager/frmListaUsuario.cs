@@ -21,7 +21,7 @@ namespace StartupManager
 
         
 
-        public void CarregaGrid()
+        private void CarregaGrid()
         {
             dgvDados.DataSource = up.listarTodos();
             //dgvDados.Columns[0].ReadOnly = true;
@@ -36,10 +36,8 @@ namespace StartupManager
         private void btnNovo_Click(object sender, EventArgs e)
         {
             frmCadastro cad = new frmCadastro(0);
-            
             cad.ShowDialog();
-            cad.verifica = true;
-            CarregaGrid();
+           
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -49,23 +47,7 @@ namespace StartupManager
                 int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
                 frmCadastro altera = new frmCadastro(id);
                 altera.ShowDialog();
-                CarregaGrid();
             }
-        }
-
-        private void dgvDados_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void frmListaUsuario_Shown(object sender, EventArgs e)
-        {
-            CarregaGrid();
-        }
-
-        private void frmListaUsuario_Activated(object sender, EventArgs e)
-        {
-            CarregaGrid();
         }
     }
 }
