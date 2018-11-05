@@ -17,13 +17,17 @@ namespace StartupManager
 
         private bool novoCadastro = false;//É true na função novo Cadastro   
         Usuario u;
+        public bool verifica = false;
         private ModelUsuario model;
         private int id;
+        private frmListaUsuario listagem;
+
         public frmCadastro(int id)
         {
             InitializeComponent();
 
             this.id = id;
+
             /* VISUAL*/
             var skinMenager = MaterialSkin.MaterialSkinManager.Instance;
             skinMenager.AddFormToManage(this);
@@ -48,6 +52,7 @@ namespace StartupManager
                     txtEmail.Text = u.Email;
                     txtNome.Text = u.Nome;
                     mskCPF.Text = u.Cpf;
+                    
                     dtpData.Value = DateTime.Parse(u.DataNasc);
                     if (u.Sexo.ToString().Equals("M"))
                     {
@@ -62,6 +67,7 @@ namespace StartupManager
                 else
                 {
                     this.Text = "Cadastro";
+
                     cmbCargo.SelectedIndex = 0;
                     radMasc.Checked = true;
                 }

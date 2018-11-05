@@ -47,6 +47,7 @@ namespace StartupManager
                 int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
                 frmCadastro altera = new frmCadastro(id);
                 altera.ShowDialog();
+                CarregaGrid();
             }
         }
 
@@ -58,7 +59,7 @@ namespace StartupManager
                 DialogResult dr = MessageBox.Show("Deseja realmente EXCLUIR ?", "RTPark", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (dr == DialogResult.Yes)
                 {
-                    //.Excluir(id);
+                    up.Excluir(id);
                     CarregaGrid();
                 }
             }
