@@ -17,24 +17,32 @@ namespace StartupManager
 
         private bool novoCadastro = false;//É true na função novo Cadastro   
         Usuario u;
-        private ModelUsuario model;
+        public bool verifica = false;
         private int id;
+        private frmListaUsuario listagem;
+        private ModelUsuario model;
         public frmCadastro(int id)
         {
             InitializeComponent();
 
             this.id = id;
+
+            #region VISUAL
+
             /* VISUAL*/
             var skinMenager = MaterialSkin.MaterialSkinManager.Instance;
             skinMenager.AddFormToManage(this);
             skinMenager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             skinMenager.ColorScheme = new MaterialSkin.ColorScheme
-               /* (MaterialSkin.Primary.Blue600, MaterialSkin.Primary.Blue700, MaterialSkin.Accent.Indigo100, MaterialSkin.TextShade.WHITE);*/
-             (
-               MaterialSkin.Primary.Blue400, MaterialSkin.Primary.Blue500,
-                MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue200,
-                MaterialSkin.TextShade.WHITE
-            );
+                /* (MaterialSkin.Primary.Blue600, MaterialSkin.Primary.Blue700, MaterialSkin.Accent.Indigo100, MaterialSkin.TextShade.WHITE);*/
+                (
+                    MaterialSkin.Primary.Blue400, MaterialSkin.Primary.Blue500,
+                    MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue200,
+                    MaterialSkin.TextShade.WHITE
+                );
+
+            #endregion
+
 
             try
             {
@@ -42,6 +50,7 @@ namespace StartupManager
                 if (id != 0)
                 {
                     this.Text = "Alteração";
+                    btnSalvar.Text = "Alterar";
                     model = new ModelUsuario();
                     u = model.BuscaId(id);
                     // exibir dados no formulario
@@ -94,54 +103,52 @@ namespace StartupManager
         {
             if (validar())
             {
-                u = new Usuario();
-                string result;
-                using (MD5 hash = MD5.Create())
-                {
 
+                if (id == 0)
+                {
                     u = new Usuario();
                     pegaCampos();
+                    try
+                    {
+                        frmLogin login = new frmLogin();
+                        ModelUsuario i = new ModelUsuario();
+                        i.Insert(u);
+                        MessageBox.Show("Dados salvos com sucesso!", "StartUpManager 72B",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (verifica)
+                        {
+                            login.Show();
 
-                    result = String.Join
-                    (
-                        "",
-                        from ba in hash.ComputeHash
-                        (
-                            Encoding.UTF8.GetBytes(txtSenha.Text)
-                        )
-                        select ba.ToString("x2")
-                    );
+                        }
+                        listagem = new frmListaUsuario();
+                        listagem.CarregaGrid();
+                        this.Close();
+
+
+                    }
+                    catch (Exception er)
+                    {
+                        MessageBox.Show("Erro de execução da QUERY !!! " + er.Message, "StartUpManager 72B",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-
-                u.Sexo = (radFem.Checked) ? 'F' : 'M';
-                u.Nome = txtNome.Text;
-                u.Senha = result;
-                u.Email = txtEmail.Text;
-                u.Cpf = mskCPF.Text;
-                u.Cargo = cmbCargo.SelectedItem.ToString();
-                u.DataNasc = dtpData.Value.ToString("yyyy-MM-dd");
-
-                try
+                else
                 {
-                    frmLogin login = new frmLogin();
-                    ModelUsuario i = new ModelUsuario();
-                    i.Insert(u);
-                    MessageBox.Show("Dados salvos com sucesso!", "StartUpManager 72B",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
-                    login.Show();
-
-
-                }
-                catch (Exception er)
-                {
-                    MessageBox.Show("Erro de execução da QUERY !!! " + er.Message, "StartUpManager 72B",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    try
+                    {
+                        pegaCampos();
+                        model.Update(u);
+                        MessageBox.Show("Usuario Alterado");
+                        this.Close();
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show("Erro de execução da QUERY !!! " + exception.Message, "StartUpManager 72B",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
 
             }
-
-
         }
 
         private void pegaCampos()

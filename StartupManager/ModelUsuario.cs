@@ -91,16 +91,31 @@ namespace StartupManager
         {
             try
             {
-                ConexaoBanco.Conectar();
-                String sql = "UPDATE usuarios SET ";
+                String sql = "UPDATE usuario SET ";
+                sql += " nome = '" + u.Nome + "', ";
+                sql += " senha  = '" + u.Senha + "', ";
+                sql += " email  = '" + u.Email + "', ";
+                sql += " data_nasc  = '" + u.DataNasc + "', ";
+                sql += " cpf  = '" + u.Cpf + "', ";
+                sql += " cargo  = '" + u.Cargo + "', ";
+                sql += " sexo  = '" + u.Sexo + "' ";
                 sql += " WHERE id_user = " + u.IdUser + ";";
-                sql = sql.Replace("''", "NULL");
                 ConexaoBanco.Executar(sql);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao atualizar o Serviço !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao atualizar o Serviço !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
+            finally
+            {
+                ConexaoBanco.Desconectar();
+            }            
+        }
+
+        public void Excluir(int id)
+        {
+
         }
     }
 }

@@ -21,7 +21,7 @@ namespace StartupManager
 
         
 
-        private void CarregaGrid()
+        public  void CarregaGrid()
         {
             dgvDados.DataSource = up.listarTodos();
             //dgvDados.Columns[0].ReadOnly = true;
@@ -37,6 +37,7 @@ namespace StartupManager
         {
             frmCadastro cad = new frmCadastro(0);
             cad.ShowDialog();
+            CarregaGrid();
            
         }
 
@@ -47,6 +48,7 @@ namespace StartupManager
                 int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
                 frmCadastro altera = new frmCadastro(id);
                 altera.ShowDialog();
+                CarregaGrid();
             }
         }
 
