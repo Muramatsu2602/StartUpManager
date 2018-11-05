@@ -31,21 +31,21 @@
             this.lblId = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.mskCPF = new System.Windows.Forms.MaskedTextBox();
             this.radFem = new System.Windows.Forms.RadioButton();
             this.radMasc = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtNome = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtSenha = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
+            this.btnSalvar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnCancelar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSair = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
             // lblId
@@ -81,36 +81,10 @@
             this.label5.TabIndex = 48;
             this.label5.Text = "Senha";
             // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(144, 429);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(117, 37);
-            this.btnSalvar.TabIndex = 9;
-            this.btnSalvar.Text = "&Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(270, 429);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(117, 37);
-            this.btnCancelar.TabIndex = 10;
-            this.btnCancelar.Text = "&Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // mskCPF
             // 
             this.mskCPF.BackColor = System.Drawing.SystemColors.Control;
-            this.mskCPF.Location = new System.Drawing.Point(446, 234);
+            this.mskCPF.Location = new System.Drawing.Point(441, 229);
             this.mskCPF.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mskCPF.Mask = "000.000.000-00";
             this.mskCPF.Name = "mskCPF";
@@ -120,7 +94,7 @@
             // radFem
             // 
             this.radFem.AutoSize = true;
-            this.radFem.Location = new System.Drawing.Point(561, 298);
+            this.radFem.Location = new System.Drawing.Point(558, 300);
             this.radFem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radFem.Name = "radFem";
             this.radFem.Size = new System.Drawing.Size(92, 24);
@@ -132,7 +106,7 @@
             // 
             this.radMasc.AutoSize = true;
             this.radMasc.Checked = true;
-            this.radMasc.Location = new System.Drawing.Point(442, 298);
+            this.radMasc.Location = new System.Drawing.Point(441, 300);
             this.radMasc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radMasc.Name = "radMasc";
             this.radMasc.Size = new System.Drawing.Size(98, 24);
@@ -167,26 +141,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(441, 142);
+            this.label2.Location = new System.Drawing.Point(438, 123);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 16);
             this.label2.TabIndex = 54;
             this.label2.Text = "Data de Nascimento";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(396, 431);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 37);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "&Sair";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtEmail
             // 
@@ -237,7 +197,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(436, 343);
+            this.label6.Location = new System.Drawing.Point(438, 340);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 16);
@@ -269,18 +229,62 @@
             this.dtpData.Size = new System.Drawing.Size(119, 26);
             this.dtpData.TabIndex = 2;
             // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.Depth = 0;
+            this.btnSalvar.Location = new System.Drawing.Point(154, 429);
+            this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Primary = true;
+            this.btnSalvar.Size = new System.Drawing.Size(90, 33);
+            this.btnSalvar.TabIndex = 68;
+            this.btnSalvar.Text = "SALVAR";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Depth = 0;
+            this.btnCancelar.Location = new System.Drawing.Point(276, 429);
+            this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Primary = true;
+            this.btnCancelar.Size = new System.Drawing.Size(90, 33);
+            this.btnCancelar.TabIndex = 69;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnSair
+            // 
+            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSair.Depth = 0;
+            this.btnSair.Location = new System.Drawing.Point(391, 429);
+            this.btnSair.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Primary = true;
+            this.btnSair.Size = new System.Drawing.Size(90, 33);
+            this.btnSair.TabIndex = 70;
+            this.btnSair.Text = "SAIR";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 482);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.dtpData);
             this.Controls.Add(this.cmbCargo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.mskCPF);
             this.Controls.Add(this.radFem);
             this.Controls.Add(this.radMasc);
@@ -290,8 +294,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblId);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnSalvar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmCadastro";
@@ -308,21 +310,21 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.MaskedTextBox mskCPF;
         private System.Windows.Forms.RadioButton radFem;
         private System.Windows.Forms.RadioButton radMasc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtEmail;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNome;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSenha;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbCargo;
         private System.Windows.Forms.DateTimePicker dtpData;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSalvar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnCancelar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSair;
     }
 }
 

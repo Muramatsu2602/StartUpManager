@@ -99,6 +99,7 @@
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.Depth = 0;
+            this.btnBuscar.ForeColor = System.Drawing.Color.Blue;
             this.btnBuscar.Location = new System.Drawing.Point(804, 29);
             this.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscar.Name = "btnBuscar";

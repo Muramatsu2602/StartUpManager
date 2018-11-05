@@ -24,7 +24,18 @@ namespace StartupManager
         {
             InitializeComponent();
             this.id = id;
-
+            /* VISUAL*/
+            var skinMenager = MaterialSkin.MaterialSkinManager.Instance;
+            skinMenager.AddFormToManage(this);
+            skinMenager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+            skinMenager.ColorScheme = new MaterialSkin.ColorScheme
+               /* (MaterialSkin.Primary.Blue600, MaterialSkin.Primary.Blue700, MaterialSkin.Accent.Indigo100, MaterialSkin.TextShade.WHITE);*/
+             (
+               MaterialSkin.Primary.Blue400, MaterialSkin.Primary.Blue500,
+                MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue200,
+                MaterialSkin.TextShade.WHITE
+            );
+            /**/
             try
             {
 
@@ -90,7 +101,7 @@ namespace StartupManager
                 if (id == 0)
                 {
                     u = new Usuario();
-                   pegaCampos();
+                    pegaCampos();
 
                     try
                     {
@@ -209,11 +220,12 @@ namespace StartupManager
             Limpa();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnSair_Click(object sender, EventArgs e)
         {
             frmLogin log = new frmLogin();
             log.Show();
             this.Hide();
         }
+
     }
 }

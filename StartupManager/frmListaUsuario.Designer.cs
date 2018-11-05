@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.dgvDados = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLimpar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtConsulta = new System.Windows.Forms.TextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -64,24 +64,6 @@
             this.dgvDados.Size = new System.Drawing.Size(867, 559);
             this.dgvDados.TabIndex = 0;
             this.dgvDados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellContentClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.btnLimpar);
-            this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.txtConsulta);
-            this.groupBox1.Controls.Add(this.materialLabel2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(13, 685);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(996, 71);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "PESQUISAR:";
             // 
             // btnLimpar
             // 
@@ -150,19 +132,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Usuários";
             // 
-            // materialDivider1
-            // 
-            this.materialDivider1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(894, 61);
-            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(128, 616);
-            this.materialDivider1.TabIndex = 6;
-            this.materialDivider1.Text = "materialDivider1";
-            // 
             // btnNovo
             // 
             this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -198,6 +167,37 @@
             this.button1.Text = "&Deletar";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnLimpar);
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Controls.Add(this.txtConsulta);
+            this.groupBox1.Controls.Add(this.materialLabel2);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(13, 685);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(996, 71);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "PESQUISAR:";
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialDivider1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(893, 64);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(128, 616);
+            this.materialDivider1.TabIndex = 6;
+            this.materialDivider1.Text = "materialDivider1";
+            // 
             // frmListaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -229,16 +229,16 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvDados;
-        private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private MaterialSkin.Controls.MaterialRaisedButton btnLimpar;
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
         private System.Windows.Forms.TextBox txtConsulta;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
     }
 }
