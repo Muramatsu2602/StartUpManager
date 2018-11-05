@@ -18,6 +18,7 @@ namespace StartupManager
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmListaUsuario());
             //Application.Run(new frmMenu(null));
+            
            
         }
     }

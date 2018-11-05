@@ -214,7 +214,7 @@
             this.btnProjeto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.btnProjeto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProjeto.Image = ((System.Drawing.Image)(resources.GetObject("btnProjeto.Image")));
-            this.btnProjeto.Location = new System.Drawing.Point(925, 118);
+            this.btnProjeto.Location = new System.Drawing.Point(925, 108);
             this.btnProjeto.Name = "btnProjeto";
             this.btnProjeto.Size = new System.Drawing.Size(70, 70);
             this.btnProjeto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -227,7 +227,7 @@
             this.btnTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.btnTime.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTime.Image = ((System.Drawing.Image)(resources.GetObject("btnTime.Image")));
-            this.btnTime.Location = new System.Drawing.Point(925, 233);
+            this.btnTime.Location = new System.Drawing.Point(925, 223);
             this.btnTime.Name = "btnTime";
             this.btnTime.Size = new System.Drawing.Size(70, 70);
             this.btnTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -239,8 +239,9 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(898, 90);
+            this.label2.Location = new System.Drawing.Point(898, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 25);
             this.label2.TabIndex = 17;
@@ -251,8 +252,9 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(894, 205);
+            this.label3.Location = new System.Drawing.Point(894, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 25);
             this.label3.TabIndex = 18;

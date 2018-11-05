@@ -18,11 +18,11 @@ namespace StartupManager
         private bool novoCadastro = false;//É true na função novo Cadastro   
         Usuario u;
         private ModelUsuario model;
+        private int id;
         public frmCadastro(int id)
         {
             InitializeComponent();
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             this.id = id;
             /* VISUAL*/
             var skinMenager = MaterialSkin.MaterialSkinManager.Instance;
@@ -35,11 +35,7 @@ namespace StartupManager
                 MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue200,
                 MaterialSkin.TextShade.WHITE
             );
-            /**/
-=======
->>>>>>> parent of 1387021... Alteracao de Usuario Funcionando
-=======
->>>>>>> parent of 1387021... Alteracao de Usuario Funcionando
+
             try
             {
 
@@ -102,13 +98,10 @@ namespace StartupManager
                 string result;
                 using (MD5 hash = MD5.Create())
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                     u = new Usuario();
                     pegaCampos();
-=======
-=======
->>>>>>> parent of 1387021... Alteracao de Usuario Funcionando
+
                     result = String.Join
                     (
                         "",
@@ -137,10 +130,7 @@ namespace StartupManager
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
                     login.Show();
-<<<<<<< HEAD
->>>>>>> parent of 1387021... Alteracao de Usuario Funcionando
-=======
->>>>>>> parent of 1387021... Alteracao de Usuario Funcionando
+
 
                 }
                 catch (Exception er)
@@ -154,6 +144,30 @@ namespace StartupManager
 
         }
 
+        private void pegaCampos()
+        {
+            string result;
+            using (MD5 hash = MD5.Create())
+            {
+                result = String.Join
+                (
+                    "",
+                    from ba in hash.ComputeHash
+                    (
+                        Encoding.UTF8.GetBytes(txtSenha.Text)
+                    )
+                    select ba.ToString("x2")
+                );
+            }
+
+            u.Sexo = (radFem.Checked) ? 'F' : 'M';
+            u.Nome = txtNome.Text;
+            u.Senha = result;
+            u.Email = txtEmail.Text;
+            u.Cpf = mskCPF.Text;
+            u.Cargo = cmbCargo.SelectedItem.ToString();
+            u.DataNasc = dtpData.Value.ToString("yyyy-MM-dd");
+        }
         private bool validar()
         {
             if (String.IsNullOrWhiteSpace(txtEmail.Text))
