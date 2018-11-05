@@ -22,6 +22,7 @@ namespace StartupManager
         {
             InitializeComponent();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.id = id;
             /* VISUAL*/
             var skinMenager = MaterialSkin.MaterialSkinManager.Instance;
@@ -35,6 +36,8 @@ namespace StartupManager
                 MaterialSkin.TextShade.WHITE
             );
             /**/
+=======
+>>>>>>> parent of 1387021... Alteracao de Usuario Funcionando
 =======
 >>>>>>> parent of 1387021... Alteracao de Usuario Funcionando
             try
@@ -100,9 +103,12 @@ namespace StartupManager
                 using (MD5 hash = MD5.Create())
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     u = new Usuario();
                     pegaCampos();
 =======
+=======
+>>>>>>> parent of 1387021... Alteracao de Usuario Funcionando
                     result = String.Join
                     (
                         "",
@@ -131,6 +137,9 @@ namespace StartupManager
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
                     login.Show();
+<<<<<<< HEAD
+>>>>>>> parent of 1387021... Alteracao de Usuario Funcionando
+=======
 >>>>>>> parent of 1387021... Alteracao de Usuario Funcionando
 
                 }

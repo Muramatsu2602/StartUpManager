@@ -63,6 +63,27 @@
             this.dgvDados.ShowEditingIcon = false;
             this.dgvDados.Size = new System.Drawing.Size(867, 559);
             this.dgvDados.TabIndex = 0;
+<<<<<<< HEAD
+=======
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnLimpar);
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Controls.Add(this.txtConsulta);
+            this.groupBox1.Controls.Add(this.materialLabel2);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(13, 685);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(996, 71);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "PESQUISAR:";
+>>>>>>> parent of 1387021... Alteracao de Usuario Funcionando
             // 
             // btnLimpar
             // 
