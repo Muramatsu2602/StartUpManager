@@ -115,7 +115,20 @@ namespace StartupManager
 
         public void Excluir(int id)
         {
-
+            try
+            {
+               ConexaoBanco.Conectar();
+                String sql = "UPDATE usuario SET data_exclusao= "+"'"+DateTime.Now+"'"+"WHERE id_user = " + id + ";";
+                ConexaoBanco.Executar(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir o Serviço !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                ConexaoBanco.Desconectar();
+            }
         }
     }
 }

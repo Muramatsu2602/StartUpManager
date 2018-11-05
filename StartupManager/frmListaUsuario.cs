@@ -60,7 +60,7 @@ namespace StartupManager
                 DialogResult dr = MessageBox.Show("Deseja realmente EXCLUIR ?", "RTPark", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (dr == DialogResult.Yes)
                 {
-                    //.Excluir(id);
+                    up.Excluir(id);
                     CarregaGrid();
                 }
             }
