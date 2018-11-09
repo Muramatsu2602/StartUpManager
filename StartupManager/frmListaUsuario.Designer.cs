@@ -67,6 +67,7 @@
             this.dgvDados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDados.ShowCellToolTips = false;
             this.dgvDados.ShowEditingIcon = false;
             this.dgvDados.Size = new System.Drawing.Size(867, 559);
             this.dgvDados.TabIndex = 0;

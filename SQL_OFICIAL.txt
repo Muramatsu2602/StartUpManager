@@ -1,0 +1,51 @@
+CREATE TABLE public.canvas
+(
+    id_canvas bigint DEFAULT nextval('id_canvas_seq'::regclass),
+    proposta_de_valor character varying(400) COLLATE pg_catalog."default" NOT NULL,
+    relacionamento character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    canais character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    segmento_cliente character varying(400) COLLATE pg_catalog."default" NOT NULL,
+    parcerias_chave character varying(400) COLLATE pg_catalog."default" NOT NULL,
+    atividade_chave character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    recursos_chave character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    estrura_dados character varying(400) COLLATE pg_catalog."default" NOT NULL,
+    fonte_receita character varying(400) COLLATE pg_catalog."default" NOT NULL,
+    id_projeto bigint NOT NULL,
+    ultima_alteracao date
+)
+
+CREATE TABLE public.projeto
+(
+    id_projeto integer NOT NULL DEFAULT nextval('projeto_id_projeto_seq'::regclass),
+    nome character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    data_criacao character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    descricao character varying(500) COLLATE pg_catalog."default" NOT NULL,
+    data_excluido date,
+    id_ceo integer NOT NULL,
+    ultima_alteracao date,
+    CONSTRAINT projeto_pkey PRIMARY KEY (id_projeto)
+)
+
+CREATE TABLE public.usuario
+(
+    id_user bigint NOT NULL DEFAULT nextval('id_usuario_seq'::regclass),
+    nome character varying(100) COLLATE pg_catalog."default",
+    senha character varying(1000) COLLATE pg_catalog."default",
+    email character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    data_nasc date NOT NULL,
+    cpf character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    cargo character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    sexo character(1) COLLATE pg_catalog."default" NOT NULL,
+    data_exclusao date,
+    CONSTRAINT usuario_pkey PRIMARY KEY (id_user)
+)
+
+CREATE TABLE public.usuario_projeto
+(
+    id integer NOT NULL DEFAULT nextval('usuario_projeto_id_seq'::regclass),
+    id_usuario integer NOT NULL,
+    id_projeto integer NOT NULL,
+    data_inclusao date,
+    data_exclusao date,
+    CONSTRAINT usuario_projeto_pkey PRIMARY KEY (id)
+)
