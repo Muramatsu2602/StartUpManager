@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace StartupManager
 {
-    public partial class frmListaUsuario: MaterialSkin.Controls.MaterialForm
+    public partial class frmListaUsuario : MaterialSkin.Controls.MaterialForm
     {
         ModelUsuario up = new ModelUsuario();
         public frmListaUsuario()
@@ -19,9 +19,9 @@ namespace StartupManager
             CarregaGrid();
         }
 
-        
 
-        public  void CarregaGrid()
+
+        public void CarregaGrid()
         {
             dgvDados.DataSource = up.listarTodos();
             //dgvDados.Columns[0].ReadOnly = true;
@@ -38,7 +38,7 @@ namespace StartupManager
             frmCadastro cad = new frmCadastro(0);
             cad.ShowDialog();
             CarregaGrid();
-           
+
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -68,6 +68,42 @@ namespace StartupManager
             {
                 MessageBox.Show("Selecione apenas um Registro!!!");
             }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtConsulta.Text = null;
+            cmbCampo.SelectedIndex = 0;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtConsulta.Text))
+            {
+                MessageBox.Show("Preencha o campo com termos a serem consultados");
+                btnBuscar.Focus();
+            }
+
+            if (cmbCampo.SelectedText == "...")
+            {
+                MessageBox.Show("Escolha um campo a ser consultado");
+                cmbCampo.Focus();
+            }
+
+            try
+            {
+                dgvDados.DataSource =  up.BuscaPorCampo(cmbCampo.SelectedItem.ToString(),txtConsulta.Text);
+            }
+            catch (Exception exception)
+            {
+               
+            }
+            
+        }
+
+        private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CarregaGrid();
         }
     }
 }

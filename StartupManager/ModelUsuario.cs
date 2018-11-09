@@ -130,5 +130,23 @@ namespace StartupManager
                 ConexaoBanco.Desconectar();
             }
         }
+
+        public DataTable BuscaPorCampo(string campo, string busca)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+               ConexaoBanco.Conectar();
+               String sql = "SELECT  id_user, nome, email, data_nasc, cpf, cargo, sexo FROM usuario";
+                sql += " WHERE " + campo + " LIKE '%" + busca + "%';";
+                dt = ConexaoBanco.SelecionarDataTable(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao buscar os registros !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            ConexaoBanco.Desconectar();
+            return dt;
+        }
     }
 }

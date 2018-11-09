@@ -34,7 +34,7 @@
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtConsulta = new System.Windows.Forms.TextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbCampo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -70,6 +70,7 @@
             this.dgvDados.ShowEditingIcon = false;
             this.dgvDados.Size = new System.Drawing.Size(867, 559);
             this.dgvDados.TabIndex = 0;
+            this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // btnLimpar
             // 
@@ -83,6 +84,7 @@
             this.btnLimpar.TabIndex = 5;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnBuscar
             // 
@@ -96,6 +98,7 @@
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtConsulta
             // 
@@ -119,13 +122,20 @@
             this.materialLabel2.TabIndex = 1;
             this.materialLabel2.Text = "Campo:";
             // 
-            // comboBox1
+            // cmbCampo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(94, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 33);
-            this.comboBox1.TabIndex = 0;
+            this.cmbCampo.FormattingEnabled = true;
+            this.cmbCampo.Items.AddRange(new object[] {
+            "id_user",
+            "nome",
+            "data_nasc",
+            "cpf",
+            "cargo",
+            "sexo"});
+            this.cmbCampo.Location = new System.Drawing.Point(94, 26);
+            this.cmbCampo.Name = "cmbCampo";
+            this.cmbCampo.Size = new System.Drawing.Size(196, 33);
+            this.cmbCampo.TabIndex = 0;
             // 
             // label1
             // 
@@ -182,7 +192,7 @@
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtConsulta);
             this.groupBox1.Controls.Add(this.materialLabel2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbCampo);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(13, 685);
@@ -293,7 +303,7 @@
 
         private System.Windows.Forms.DataGridView dgvDados;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCampo;
         private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialRaisedButton btnLimpar;
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
