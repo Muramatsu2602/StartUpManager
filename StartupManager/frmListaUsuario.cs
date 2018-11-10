@@ -57,7 +57,7 @@ namespace StartupManager
             if (dgvDados.SelectedRows.Count == 1)
             {
                 int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
-                DialogResult dr = MessageBox.Show("Deseja realmente EXCLUIR ?", "RTPark", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                DialogResult dr = MessageBox.Show("Deseja realmente EXCLUIR ?", "StartUp Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (dr == DialogResult.Yes)
                 {
                     up.Excluir(id);
@@ -74,6 +74,7 @@ namespace StartupManager
         {
             txtConsulta.Text = null;
             cmbCampo.SelectedIndex = 0;
+            CarregaGrid();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -81,29 +82,35 @@ namespace StartupManager
             if (String.IsNullOrWhiteSpace(txtConsulta.Text))
             {
                 MessageBox.Show("Preencha o campo com termos a serem consultados");
+                CarregaGrid();
                 btnBuscar.Focus();
             }
 
             if (cmbCampo.SelectedText == "...")
             {
                 MessageBox.Show("Escolha um campo a ser consultado");
+                CarregaGrid();
                 cmbCampo.Focus();
             }
 
             try
             {
-                dgvDados.DataSource =  up.BuscaPorCampo(cmbCampo.SelectedItem.ToString(),txtConsulta.Text);
+              
+               dgvDados.DataSource = up.BuscaPorCampo(cmbCampo.SelectedItem.ToString(), txtConsulta.Text.ToUpper());
+
             }
             catch (Exception exception)
             {
-               
+
             }
-            
+
         }
 
         private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             CarregaGrid();
         }
+
+
     }
 }

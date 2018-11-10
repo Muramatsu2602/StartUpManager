@@ -134,11 +134,28 @@ namespace StartupManager
         public DataTable BuscaPorCampo(string campo, string busca)
         {
             DataTable dt = new DataTable();
+            Int64 teste;
             try
             {
+                if (campo.Equals("id_user"))
+                {
+                    teste =  Convert.ToInt64(busca);
+                }else if (campo.Equals("data_nasc"))
+
+                {
+                    Convert.ToDateTime(busca);
+                }
                ConexaoBanco.Conectar();
                String sql = "SELECT  id_user, nome, email, data_nasc, cpf, cargo, sexo FROM usuario";
-                sql += " WHERE " + campo + " LIKE '%" + busca + "%';";
+                if (campo.Equals("id_user") || campo.Equals("data_nasc"))
+                {
+                    sql += " WHERE " + campo + " LIKE '%" + busca + "%';";
+                }
+                else
+                {
+                    sql += " WHERE UPPER(" + campo + ") LIKE '%" + busca + "%';";
+                }
+         
                 dt = ConexaoBanco.SelecionarDataTable(sql);
             }
             catch (Exception ex)

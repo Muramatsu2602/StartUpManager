@@ -116,7 +116,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(6, 34);
+            this.materialLabel2.Location = new System.Drawing.Point(18, 38);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(61, 19);
@@ -129,11 +129,12 @@
             this.cmbCampo.Items.AddRange(new object[] {
             "id_user",
             "nome",
+            "email",
             "data_nasc",
             "cpf",
             "cargo",
             "sexo"});
-            this.cmbCampo.Location = new System.Drawing.Point(94, 26);
+            this.cmbCampo.Location = new System.Drawing.Point(94, 30);
             this.cmbCampo.Name = "cmbCampo";
             this.cmbCampo.Size = new System.Drawing.Size(196, 33);
             this.cmbCampo.TabIndex = 0;
@@ -304,7 +305,6 @@
 
         private System.Windows.Forms.DataGridView dgvDados;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private System.Windows.Forms.ComboBox cmbCampo;
         private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialRaisedButton btnLimpar;
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscar;
@@ -318,5 +318,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox btnTime;
         private System.Windows.Forms.PictureBox btnProjeto;
+        private System.Windows.Forms.ComboBox cmbCampo;
     }
 }
