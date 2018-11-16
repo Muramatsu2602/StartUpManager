@@ -11,6 +11,7 @@ using System.Windows.Forms;
 namespace StartupManager
 {
     public partial class frmCanvasInterativo : MaterialSkin.Controls.MaterialForm
+   
     {
         public frmCanvasInterativo()
         {
@@ -26,6 +27,46 @@ namespace StartupManager
         {
             frmAjudaCanvas ajuda = new frmAjudaCanvas();
             ajuda.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Deseja realmente SAIR ?", "StartUp Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

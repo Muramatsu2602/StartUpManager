@@ -10,17 +10,14 @@ using System.Windows.Forms;
 
 namespace StartupManager
 {
-    public partial class frmAjudaCanvas :  MaterialSkin.Controls.MaterialForm
+    public partial class Temp : Form
     {
-        public frmAjudaCanvas()
+        public Temp()
         {
             InitializeComponent();
-            this.MaximumSize = this.Size;
-            this.MinimumSize = this.Size;
-            StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void panel9_Paint(object sender, PaintEventArgs e)
         {
 
         }

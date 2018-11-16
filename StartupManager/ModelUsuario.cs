@@ -71,7 +71,7 @@ namespace StartupManager
                     u.DataNasc = dados["data_nasc"].ToString();
                     u.Data_exclusao = dados["data_exclusao"].ToString();
                     u.Senha = (string)dados["senha"];
-                    u.Sexo = Char.Parse(dados["sexo"].ToString()) ;
+                    u.Sexo = Char.Parse(dados["sexo"].ToString());
 
                     ConexaoBanco.Desconectar();
                 }
@@ -110,15 +110,15 @@ namespace StartupManager
             finally
             {
                 ConexaoBanco.Desconectar();
-            }            
+            }
         }
 
         public void Excluir(int id)
         {
             try
             {
-               ConexaoBanco.Conectar();
-                String sql = "UPDATE usuario SET data_exclusao= "+"'"+DateTime.Now+"'"+"WHERE id_user = " + id + ";";
+                ConexaoBanco.Conectar();
+                String sql = "UPDATE usuario SET data_exclusao= " + "'" + DateTime.Now + "'" + "WHERE id_user = " + id + ";";
                 ConexaoBanco.Executar(sql);
             }
             catch (Exception ex)
@@ -134,28 +134,23 @@ namespace StartupManager
         public DataTable BuscaPorCampo(string campo, string busca)
         {
             DataTable dt = new DataTable();
-            Int64 teste;
             try
             {
+                ConexaoBanco.Conectar();
+                String sql = "SELECT  id_user, nome, email, data_nasc, cpf, cargo, sexo FROM usuario";
                 if (campo.Equals("id_user"))
                 {
-                    teste =  Convert.ToInt64(busca);
-                }else if (campo.Equals("data_nasc"))
-
-                {
-                    Convert.ToDateTime(busca);
+                    sql += " WHERE " + campo + " =" + Convert.ToInt64(busca) + ";";
                 }
-               ConexaoBanco.Conectar();
-               String sql = "SELECT  id_user, nome, email, data_nasc, cpf, cargo, sexo FROM usuario";
-                if (campo.Equals("id_user") || campo.Equals("data_nasc"))
+                else if (campo.Equals("data_nasc"))
                 {
-                    sql += " WHERE " + campo + " LIKE '%" + busca + "%';";
+                    sql += " WHERE " + campo + " LIKE '%" + Convert.ToDateTime(busca) + "%';";
                 }
                 else
                 {
-                    sql += " WHERE UPPER(" + campo + ") LIKE '%" + busca + "%';";
+                    sql += " WHERE UPPER(" + campo + ") LIKE UPPER('%" + busca + "%');";
                 }
-         
+
                 dt = ConexaoBanco.SelecionarDataTable(sql);
             }
             catch (Exception ex)

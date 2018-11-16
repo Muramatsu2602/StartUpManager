@@ -40,15 +40,12 @@
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCanvas = new System.Windows.Forms.Button();
-            this.btnProjeto = new System.Windows.Forms.PictureBox();
             this.btnTime = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnProjeto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTime)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,16 +182,16 @@
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.NovoAlterar);
             // 
-            // button1
+            // btnExcluir
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.Location = new System.Drawing.Point(653, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 33);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "&Deletar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcluir.Location = new System.Drawing.Point(653, 76);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(90, 33);
+            this.btnExcluir.TabIndex = 13;
+            this.btnExcluir.Text = "&Deletar";
+            this.btnExcluir.UseVisualStyleBackColor = false;
             // 
             // btnCanvas
             // 
@@ -208,26 +205,13 @@
             this.btnCanvas.UseVisualStyleBackColor = false;
             this.btnCanvas.Click += new System.EventHandler(this.btnCanvas_Click);
             // 
-            // btnProjeto
-            // 
-            this.btnProjeto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProjeto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.btnProjeto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProjeto.Image = ((System.Drawing.Image)(resources.GetObject("btnProjeto.Image")));
-            this.btnProjeto.Location = new System.Drawing.Point(925, 108);
-            this.btnProjeto.Name = "btnProjeto";
-            this.btnProjeto.Size = new System.Drawing.Size(70, 70);
-            this.btnProjeto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnProjeto.TabIndex = 15;
-            this.btnProjeto.TabStop = false;
-            // 
             // btnTime
             // 
             this.btnTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.btnTime.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTime.Image = ((System.Drawing.Image)(resources.GetObject("btnTime.Image")));
-            this.btnTime.Location = new System.Drawing.Point(925, 223);
+            this.btnTime.Location = new System.Drawing.Point(925, 152);
             this.btnTime.Name = "btnTime";
             this.btnTime.Size = new System.Drawing.Size(70, 70);
             this.btnTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -235,43 +219,28 @@
             this.btnTime.TabStop = false;
             this.btnTime.Click += new System.EventHandler(this.btnTime_Click);
             // 
-            // label2
+            // lblTime
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(898, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 25);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Projetos";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(894, 195);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 25);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Usuários";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(894, 124);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(128, 25);
+            this.lblTime.TabIndex = 18;
+            this.lblTime.Text = "USUÁRIOS";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1021, 768);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblTime);
             this.Controls.Add(this.btnTime);
-            this.Controls.Add(this.btnProjeto);
             this.Controls.Add(this.btnCanvas);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.materialDivider1);
@@ -289,7 +258,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnProjeto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -309,11 +277,9 @@
         private System.Windows.Forms.TextBox txtConsulta;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnCanvas;
-        private System.Windows.Forms.PictureBox btnProjeto;
         private System.Windows.Forms.PictureBox btnTime;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTime;
     }
 }

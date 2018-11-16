@@ -17,10 +17,8 @@ namespace StartupManager
         {
             InitializeComponent();
             CarregaGrid();
+            cmbCampo.SelectedIndex = 1;
         }
-
-
-
         public void CarregaGrid()
         {
             dgvDados.DataSource = up.listarTodos();
@@ -83,7 +81,7 @@ namespace StartupManager
             {
                 MessageBox.Show("Preencha o campo com termos a serem consultados");
                 CarregaGrid();
-                btnBuscar.Focus();
+                txtConsulta.Focus();
             }
 
             if (cmbCampo.SelectedText == "...")

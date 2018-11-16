@@ -220,6 +220,20 @@ namespace StartupManager
 
             }
 
+            if (id == 0)
+            {
+                model = new ModelUsuario();
+               
+                DataTable dt =  model.BuscaPorCampo("cpf", mskCPF.Text);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Usuario Já Cadastrado !\nProcure um CEO!");
+                    Limpa();
+                    return false;
+                }
+
+            }
+
             return true;
         }
         private void btnCancelar_Click(object sender, EventArgs e)

@@ -28,185 +28,586 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCanvasInterativo));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox7 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox8 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox9 = new System.Windows.Forms.RichTextBox();
-            this.btnAjudaCanvas = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lblNomeProjeto = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtRecursos = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtPrincipaisParcerias = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtPropostaDeValor = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.txtEstruturaDeCustos = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtRelacionamentoComClientes = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtCanais = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.txtSegmentoDeClientes = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txtFontesDeReceita = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // lbl1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lbl1.AutoSize = true;
+            this.lbl1.BackColor = System.Drawing.Color.White;
+            this.lbl1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(7, 71);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(70, 19);
+            this.lbl1.TabIndex = 2;
+            this.lbl1.Text = "Projeto:";
+            // 
+            // lblNomeProjeto
+            // 
+            this.lblNomeProjeto.AutoSize = true;
+            this.lblNomeProjeto.BackColor = System.Drawing.Color.White;
+            this.lblNomeProjeto.Location = new System.Drawing.Point(83, 73);
+            this.lblNomeProjeto.Name = "lblNomeProjeto";
+            this.lblNomeProjeto.Size = new System.Drawing.Size(20, 18);
+            this.lblNomeProjeto.TabIndex = 3;
+            this.lblNomeProjeto.Text = "...";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(5, 108);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1593, 850);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.panel7, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel5, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel4, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel8, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel6, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel9, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel10, 2, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 108);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1024, 660);
+            this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // richTextBox1
+            // panel2
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(204)))), ((int)(((byte)(243)))));
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(40, 371);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(295, 280);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.AutoSize = true;
+            this.panel2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel2.Controls.Add(this.txtRecursos);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(207, 222);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(198, 213);
+            this.panel2.TabIndex = 2;
             // 
-            // richTextBox2
+            // txtRecursos
             // 
-            this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(204)))), ((int)(((byte)(234)))));
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox2.Location = new System.Drawing.Point(343, 316);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(291, 69);
-            this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = "";
+            this.txtRecursos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRecursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(230)))), ((int)(((byte)(253)))));
+            this.txtRecursos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRecursos.Location = new System.Drawing.Point(9, 49);
+            this.txtRecursos.Multiline = true;
+            this.txtRecursos.Name = "txtRecursos";
+            this.txtRecursos.Size = new System.Drawing.Size(180, 151);
+            this.txtRecursos.TabIndex = 3;
             // 
-            // richTextBox3
+            // label2
             // 
-            this.richTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(186)))), ((int)(((byte)(144)))));
-            this.richTextBox3.Location = new System.Drawing.Point(948, 316);
-            this.richTextBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(296, 69);
-            this.richTextBox3.TabIndex = 3;
-            this.richTextBox3.Text = "";
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1, 1);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(195, 45);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "RECURSOS PRINCIPAIS";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // richTextBox4
+            // panel1
             // 
-            this.richTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(204)))), ((int)(((byte)(234)))));
-            this.richTextBox4.Location = new System.Drawing.Point(343, 587);
-            this.richTextBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(291, 69);
-            this.richTextBox4.TabIndex = 4;
-            this.richTextBox4.Text = "";
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoSize = true;
+            this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(207, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(198, 213);
+            this.panel1.TabIndex = 3;
             // 
-            // richTextBox5
+            // textBox1
             // 
-            this.richTextBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(186)))), ((int)(((byte)(144)))));
-            this.richTextBox5.Location = new System.Drawing.Point(950, 587);
-            this.richTextBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(296, 69);
-            this.richTextBox5.TabIndex = 5;
-            this.richTextBox5.Text = "";
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(230)))), ((int)(((byte)(253)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(9, 49);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(180, 151);
+            this.textBox1.TabIndex = 3;
             // 
-            // richTextBox6
+            // label1
             // 
-            this.richTextBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.richTextBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(74)))), ((int)(((byte)(113)))));
-            this.richTextBox6.Location = new System.Drawing.Point(647, 371);
-            this.richTextBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox6.Name = "richTextBox6";
-            this.richTextBox6.Size = new System.Drawing.Size(289, 292);
-            this.richTextBox6.TabIndex = 6;
-            this.richTextBox6.Text = "";
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(195, 45);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "ATIVIDADES PRINCIPAIS";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // richTextBox7
+            // panel3
             // 
-            this.richTextBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(186)))), ((int)(((byte)(144)))));
-            this.richTextBox7.Location = new System.Drawing.Point(1252, 372);
-            this.richTextBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox7.Name = "richTextBox7";
-            this.richTextBox7.Size = new System.Drawing.Size(298, 292);
-            this.richTextBox7.TabIndex = 7;
-            this.richTextBox7.Text = "";
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.AutoSize = true;
+            this.panel3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel3.Controls.Add(this.txtPrincipaisParcerias);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.tableLayoutPanel1.SetRowSpan(this.panel3, 2);
+            this.panel3.Size = new System.Drawing.Size(198, 432);
+            this.panel3.TabIndex = 4;
             // 
-            // richTextBox8
+            // txtPrincipaisParcerias
             // 
-            this.richTextBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.richTextBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(100)))));
-            this.richTextBox8.Location = new System.Drawing.Point(224, 666);
-            this.richTextBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox8.Name = "richTextBox8";
-            this.richTextBox8.Size = new System.Drawing.Size(376, 209);
-            this.richTextBox8.TabIndex = 8;
-            this.richTextBox8.Text = "";
+            this.txtPrincipaisParcerias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPrincipaisParcerias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(230)))), ((int)(((byte)(253)))));
+            this.txtPrincipaisParcerias.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrincipaisParcerias.Location = new System.Drawing.Point(9, 49);
+            this.txtPrincipaisParcerias.Multiline = true;
+            this.txtPrincipaisParcerias.Name = "txtPrincipaisParcerias";
+            this.txtPrincipaisParcerias.Size = new System.Drawing.Size(180, 370);
+            this.txtPrincipaisParcerias.TabIndex = 3;
             // 
-            // richTextBox9
+            // label3
             // 
-            this.richTextBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(224)))), ((int)(((byte)(100)))));
-            this.richTextBox9.Location = new System.Drawing.Point(1000, 679);
-            this.richTextBox9.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox9.Name = "richTextBox9";
-            this.richTextBox9.Size = new System.Drawing.Size(376, 196);
-            this.richTextBox9.TabIndex = 9;
-            this.richTextBox9.Text = "";
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1, 1);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(195, 45);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "PRINCIPAIS PARCERIAS";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnAjudaCanvas
+            // panel4
             // 
-            this.btnAjudaCanvas.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnAjudaCanvas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjudaCanvas.ForeColor = System.Drawing.Color.White;
-            this.btnAjudaCanvas.Location = new System.Drawing.Point(5, 69);
-            this.btnAjudaCanvas.Name = "btnAjudaCanvas";
-            this.btnAjudaCanvas.Size = new System.Drawing.Size(34, 32);
-            this.btnAjudaCanvas.TabIndex = 10;
-            this.btnAjudaCanvas.Text = "?";
-            this.btnAjudaCanvas.UseVisualStyleBackColor = false;
-            this.btnAjudaCanvas.Click += new System.EventHandler(this.btnAjudaCanvas_Click);
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.AutoSize = true;
+            this.panel4.BackColor = System.Drawing.Color.Tomato;
+            this.panel4.Controls.Add(this.txtPropostaDeValor);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Location = new System.Drawing.Point(411, 3);
+            this.panel4.Name = "panel4";
+            this.tableLayoutPanel1.SetRowSpan(this.panel4, 2);
+            this.panel4.Size = new System.Drawing.Size(198, 432);
+            this.panel4.TabIndex = 5;
+            // 
+            // txtPropostaDeValor
+            // 
+            this.txtPropostaDeValor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPropostaDeValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.txtPropostaDeValor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPropostaDeValor.Location = new System.Drawing.Point(9, 37);
+            this.txtPropostaDeValor.Multiline = true;
+            this.txtPropostaDeValor.Name = "txtPropostaDeValor";
+            this.txtPropostaDeValor.Size = new System.Drawing.Size(180, 382);
+            this.txtPropostaDeValor.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(0, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(195, 28);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "PROPOSTA DE VALOR";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel8
+            // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.AutoSize = true;
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tableLayoutPanel1.SetColumnSpan(this.panel8, 2);
+            this.panel8.Controls.Add(this.txtEstruturaDeCustos);
+            this.panel8.Controls.Add(this.label8);
+            this.panel8.Location = new System.Drawing.Point(3, 441);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(402, 216);
+            this.panel8.TabIndex = 6;
+            // 
+            // txtEstruturaDeCustos
+            // 
+            this.txtEstruturaDeCustos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEstruturaDeCustos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtEstruturaDeCustos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEstruturaDeCustos.Location = new System.Drawing.Point(9, 32);
+            this.txtEstruturaDeCustos.Multiline = true;
+            this.txtEstruturaDeCustos.Name = "txtEstruturaDeCustos";
+            this.txtEstruturaDeCustos.Size = new System.Drawing.Size(384, 172);
+            this.txtEstruturaDeCustos.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(8, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(383, 45);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "ESTRUTURA DE CUSTOS";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.AutoSize = true;
+            this.panel5.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel5.Controls.Add(this.txtRelacionamentoComClientes);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Location = new System.Drawing.Point(615, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(198, 213);
+            this.panel5.TabIndex = 7;
+            // 
+            // txtRelacionamentoComClientes
+            // 
+            this.txtRelacionamentoComClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRelacionamentoComClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtRelacionamentoComClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRelacionamentoComClientes.Location = new System.Drawing.Point(9, 49);
+            this.txtRelacionamentoComClientes.Multiline = true;
+            this.txtRelacionamentoComClientes.Name = "txtRelacionamentoComClientes";
+            this.txtRelacionamentoComClientes.Size = new System.Drawing.Size(180, 151);
+            this.txtRelacionamentoComClientes.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(0, 5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(195, 45);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "RELACIONAMENTO COM CLIENTES";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.AutoSize = true;
+            this.panel6.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel6.Controls.Add(this.txtCanais);
+            this.panel6.Controls.Add(this.label7);
+            this.panel6.Location = new System.Drawing.Point(615, 222);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(198, 213);
+            this.panel6.TabIndex = 8;
+            // 
+            // txtCanais
+            // 
+            this.txtCanais.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCanais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtCanais.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCanais.Location = new System.Drawing.Point(9, 48);
+            this.txtCanais.Multiline = true;
+            this.txtCanais.Name = "txtCanais";
+            this.txtCanais.Size = new System.Drawing.Size(180, 151);
+            this.txtCanais.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(195, 45);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "CANAIS";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.AutoSize = true;
+            this.panel7.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel7.Controls.Add(this.txtSegmentoDeClientes);
+            this.panel7.Controls.Add(this.label6);
+            this.panel7.Location = new System.Drawing.Point(819, 3);
+            this.panel7.Name = "panel7";
+            this.tableLayoutPanel1.SetRowSpan(this.panel7, 2);
+            this.panel7.Size = new System.Drawing.Size(202, 432);
+            this.panel7.TabIndex = 9;
+            // 
+            // txtSegmentoDeClientes
+            // 
+            this.txtSegmentoDeClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSegmentoDeClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtSegmentoDeClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSegmentoDeClientes.Location = new System.Drawing.Point(11, 49);
+            this.txtSegmentoDeClientes.Multiline = true;
+            this.txtSegmentoDeClientes.Name = "txtSegmentoDeClientes";
+            this.txtSegmentoDeClientes.Size = new System.Drawing.Size(180, 369);
+            this.txtSegmentoDeClientes.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(4, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(195, 45);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "SEGMENTO DE CLIENTES";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel9
+            // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel9.AutoSize = true;
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tableLayoutPanel1.SetColumnSpan(this.panel9, 2);
+            this.panel9.Controls.Add(this.txtFontesDeReceita);
+            this.panel9.Controls.Add(this.label9);
+            this.panel9.Location = new System.Drawing.Point(615, 441);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(406, 216);
+            this.panel9.TabIndex = 10;
+            // 
+            // txtFontesDeReceita
+            // 
+            this.txtFontesDeReceita.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFontesDeReceita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtFontesDeReceita.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFontesDeReceita.Location = new System.Drawing.Point(7, 32);
+            this.txtFontesDeReceita.Multiline = true;
+            this.txtFontesDeReceita.Name = "txtFontesDeReceita";
+            this.txtFontesDeReceita.Size = new System.Drawing.Size(388, 172);
+            this.txtFontesDeReceita.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(7, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(388, 29);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "FONTES DE RECEITA";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel10
+            // 
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.Controls.Add(this.btnSair);
+            this.panel10.Controls.Add(this.btnSalvar);
+            this.panel10.Controls.Add(this.label10);
+            this.panel10.Location = new System.Drawing.Point(411, 441);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(198, 216);
+            this.panel10.TabIndex = 11;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(195, 45);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "AÇÕES";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSalvar.Location = new System.Drawing.Point(9, 57);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(180, 60);
+            this.btnSalvar.TabIndex = 7;
+            this.btnSalvar.Text = "&Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            // 
+            // btnSair
+            // 
+            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSair.Location = new System.Drawing.Point(9, 144);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(180, 60);
+            this.btnSair.TabIndex = 8;
+            this.btnSair.Text = "S&air";
+            this.btnSair.UseVisualStyleBackColor = false;
             // 
             // frmCanvasInterativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1593, 937);
-            this.Controls.Add(this.btnAjudaCanvas);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.richTextBox9);
-            this.Controls.Add(this.richTextBox8);
-            this.Controls.Add(this.richTextBox7);
-            this.Controls.Add(this.richTextBox6);
-            this.Controls.Add(this.richTextBox5);
-            this.Controls.Add(this.richTextBox4);
-            this.Controls.Add(this.richTextBox3);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
+            this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.lblNomeProjeto);
+            this.Controls.Add(this.lbl1);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmCanvasInterativo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCanvasInterativo";
+            this.Text = "Canvas";
             this.Load += new System.EventHandler(this.frmCanvasInterativo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.RichTextBox richTextBox5;
-        private System.Windows.Forms.RichTextBox richTextBox6;
-        private System.Windows.Forms.RichTextBox richTextBox7;
-        private System.Windows.Forms.RichTextBox richTextBox8;
-        private System.Windows.Forms.RichTextBox richTextBox9;
-        private System.Windows.Forms.Button btnAjudaCanvas;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label lblNomeProjeto;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtRecursos;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txtPrincipaisParcerias;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox txtPropostaDeValor;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox txtEstruturaDeCustos;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox txtRelacionamentoComClientes;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox txtCanais;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox txtSegmentoDeClientes;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox txtFontesDeReceita;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -41,13 +41,10 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnTime = new System.Windows.Forms.PictureBox();
             this.btnProjeto = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProjeto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,7 +127,6 @@
             "id_user",
             "nome",
             "email",
-            "data_nasc",
             "cpf",
             "cargo",
             "sexo"});
@@ -217,44 +213,18 @@
             this.materialDivider1.TabIndex = 6;
             this.materialDivider1.Text = "materialDivider1";
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(893, 196);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 25);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Usuários";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(897, 81);
+            this.label2.Location = new System.Drawing.Point(894, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 25);
             this.label2.TabIndex = 21;
             this.label2.Text = "Projetos";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnTime
-            // 
-            this.btnTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTime.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnTime.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTime.Image = ((System.Drawing.Image)(resources.GetObject("btnTime.Image")));
-            this.btnTime.Location = new System.Drawing.Point(924, 224);
-            this.btnTime.Name = "btnTime";
-            this.btnTime.Size = new System.Drawing.Size(70, 70);
-            this.btnTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnTime.TabIndex = 20;
-            this.btnTime.TabStop = false;
             // 
             // btnProjeto
             // 
@@ -262,7 +232,7 @@
             this.btnProjeto.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnProjeto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProjeto.Image = ((System.Drawing.Image)(resources.GetObject("btnProjeto.Image")));
-            this.btnProjeto.Location = new System.Drawing.Point(924, 109);
+            this.btnProjeto.Location = new System.Drawing.Point(921, 150);
             this.btnProjeto.Name = "btnProjeto";
             this.btnProjeto.Size = new System.Drawing.Size(70, 70);
             this.btnProjeto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -274,9 +244,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1021, 768);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnTime);
             this.Controls.Add(this.btnProjeto);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
@@ -294,7 +262,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProjeto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -314,9 +281,7 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox btnTime;
         private System.Windows.Forms.PictureBox btnProjeto;
         private System.Windows.Forms.ComboBox cmbCampo;
     }

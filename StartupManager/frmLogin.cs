@@ -99,7 +99,7 @@ namespace StartupManager
                         u.DataNasc = dados["data_nasc"].ToString();
                         u.Data_exclusao = dados["data_exclusao"].ToString();
                         u.Senha = (string)dados["senha"];
-                        u.Sexo = (char) dados["sexo"];
+                        u.Sexo = Char.Parse(dados["sexo"].ToString());
                         ConexaoBanco.Desconectar();
                         this.Hide();
                         frmMenu menu = new frmMenu(u);
@@ -111,6 +111,7 @@ namespace StartupManager
                     else
                     {
                         MessageBox.Show("Colaborador não encontrado!", "StartUpManager 72B", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Limpa();
                     }
 
                 }
@@ -136,19 +137,15 @@ namespace StartupManager
                 Application.Exit();
             }
         }
-
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            ConexaoBanco.Desconectar();
-            frmCadastro cad = new frmCadastro(0);
-            cad.Show();
-        }
-
-       
-
         private void frmLogin_Load(object sender, EventArgs e)
         {
             txtEmail.Focus();
+        }
+
+        private void lblCadastrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmCadastro cad = new frmCadastro(0);
+            cad.Show();
         }
     }
 }

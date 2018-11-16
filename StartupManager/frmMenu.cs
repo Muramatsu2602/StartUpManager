@@ -23,7 +23,14 @@ namespace StartupManager
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-            
+            if (u.Cargo != "CEO")
+            {
+                btnNovo.Visible = false;
+                btnAlterar.Visible = false;
+                btnExcluir.Visible = false;
+                btnTime.Visible = false;
+                lblTime.Visible = false;
+            }
         }
 
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
