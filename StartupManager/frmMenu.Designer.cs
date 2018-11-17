@@ -41,6 +41,7 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnExcluit = new System.Windows.Forms.Button();
             this.btnCanvas = new System.Windows.Forms.Button();
             this.btnTime = new System.Windows.Forms.PictureBox();
             this.lblTime = new System.Windows.Forms.Label();
@@ -202,6 +203,18 @@
             this.btnExcluir.Text = "&Deletar";
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+
+            // btnExcluit
+            // 
+            this.btnExcluit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcluit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcluit.Location = new System.Drawing.Point(653, 76);
+            this.btnExcluit.Name = "btnExcluit";
+            this.btnExcluit.Size = new System.Drawing.Size(90, 33);
+            this.btnExcluit.TabIndex = 13;
+            this.btnExcluit.Text = "&Deletar";
+            this.btnExcluit.UseVisualStyleBackColor = false;
+            this.btnExcluit.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnCanvas
             // 
@@ -264,6 +277,7 @@
             this.Controls.Add(this.btnTime);
             this.Controls.Add(this.btnCanvas);
             this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnExcluit);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.materialDivider1);
@@ -303,6 +317,7 @@
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnExcluit;
         private System.Windows.Forms.Button btnCanvas;
         private System.Windows.Forms.PictureBox btnTime;
         private System.Windows.Forms.Label lblTime;
