@@ -18,6 +18,7 @@ namespace StartupManager
         {
             this.u = u;
             InitializeComponent();
+            
             CarregaGrid();
         }
 
@@ -31,7 +32,7 @@ namespace StartupManager
             Application.Exit();
         }
 
-        private void CarregaGrid()
+        public void CarregaGrid()
         {
             dgvDados.DataSource = mp.listarTodos(u);
             //dgvDados.Columns[0].ReadOnly = true;
@@ -45,7 +46,7 @@ namespace StartupManager
 
         private void NovoAlterar(object sender, EventArgs e)
         {
-            frmCadastroAlteracaoProjeto projeto = new frmCadastroAlteracaoProjeto();
+            frmCadastroAlteracaoProjeto projeto = new frmCadastroAlteracaoProjeto(u,0);
             projeto.ShowDialog();
 
         }

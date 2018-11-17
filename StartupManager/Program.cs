@@ -16,7 +16,7 @@ namespace StartupManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmListaUsuario());
+            Application.Run(new frmLogin());
             //Application.Run(new frmMenu(null));
             
            

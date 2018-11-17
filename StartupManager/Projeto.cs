@@ -9,7 +9,6 @@ namespace StartupManager
     class Projeto
     {
         private String ultimaAlteracao;
-        private int idCanvas;
         private int idProjeto;
         private String nome;
         private String dataCriacao;
@@ -18,7 +17,6 @@ namespace StartupManager
         private String descricao;
 
         public string UltimaAlteracao { get => ultimaAlteracao; set => ultimaAlteracao = value; }
-        public int IdCanvas { get => idCanvas; set => idCanvas = value; }
         public int IdProjeto { get => idProjeto; set => idProjeto = value; }
         public string Nome { get => nome; set => nome = value; }
         public string DataCriacao { get => dataCriacao; set => dataCriacao = value; }

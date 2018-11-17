@@ -99,7 +99,7 @@ namespace StartupManager
                         u.DataNasc = dados["data_nasc"].ToString();
                         u.Data_exclusao = dados["data_exclusao"].ToString();
                         u.Senha = (string)dados["senha"];
-                        u.Sexo = (char) dados["sexo"];
+                        //u.Sexo = (char) dados["sexo"];
                         ConexaoBanco.Desconectar();
                         this.Hide();
                         frmMenu menu = new frmMenu(u);

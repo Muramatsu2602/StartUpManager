@@ -33,11 +33,9 @@
             this.txtNome = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.RichTextBox();
-            this.numIdCeo = new System.Windows.Forms.NumericUpDown();
+            this.btnSalvar = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numIdCeo)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -93,17 +91,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Descrição";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(9, 487);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "ID do CEO";
-            // 
             // txtDescricao
             // 
             this.txtDescricao.BackColor = System.Drawing.SystemColors.Control;
@@ -114,22 +101,27 @@
             this.txtDescricao.TabIndex = 7;
             this.txtDescricao.Text = "";
             // 
-            // numIdCeo
+            // btnSalvar
             // 
-            this.numIdCeo.BackColor = System.Drawing.SystemColors.Control;
-            this.numIdCeo.Location = new System.Drawing.Point(13, 510);
-            this.numIdCeo.Name = "numIdCeo";
-            this.numIdCeo.Size = new System.Drawing.Size(120, 26);
-            this.numIdCeo.TabIndex = 8;
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.Depth = 0;
+            this.btnSalvar.Location = new System.Drawing.Point(358, 510);
+            this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Primary = true;
+            this.btnSalvar.Size = new System.Drawing.Size(90, 33);
+            this.btnSalvar.TabIndex = 69;
+            this.btnSalvar.Text = "SALVAR";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // frmCadastroAlteracaoProjeto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(461, 575);
-            this.Controls.Add(this.numIdCeo);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtDescricao);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNome);
@@ -141,7 +133,6 @@
             this.Text = "Cadastro";
             this.Load += new System.EventHandler(this.frmCadastroAlteracaoProjeto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numIdCeo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,8 +144,7 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox txtDescricao;
-        private System.Windows.Forms.NumericUpDown numIdCeo;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSalvar;
     }
 }
