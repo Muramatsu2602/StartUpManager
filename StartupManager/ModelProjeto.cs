@@ -71,6 +71,7 @@ namespace StartupManager
             {
                 String sql = "UPDATE projeto SET ";
                 sql += " nome = '" + projeto.Nome + "', ";
+                sql += " ultima_alteracao = '" + DateTime.Now.ToString("dd/MM/yyyy") + "', ";
                 sql += " descricao  = '" + projeto.Descricao + "' ";
                 sql += " WHERE id_projeto = " + projeto.IdProjeto + ";";
                 ConexaoBanco.Executar(sql);
