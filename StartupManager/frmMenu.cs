@@ -18,24 +18,10 @@ namespace StartupManager
         {
             this.u = u;
             InitializeComponent();
-            
             CarregaGrid();
+            InterfaceUsuario();
         }
 
-<<<<<<< HEAD
-        private void frmMenu_Load(object sender, EventArgs e)
-        {
-            if (u.Cargo != "CEO")
-            {
-                btnNovo.Visible = false;
-                btnAlterar.Visible = false;
-                btnExcluir.Visible = false;
-                btnTime.Visible = false;
-                lblTime.Visible = false;
-            }
-        }
-=======
->>>>>>> cb427f80893d68658a89566ca93e573f372e2ab1
 
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -45,25 +31,24 @@ namespace StartupManager
         public void CarregaGrid()
         {
             dgvDados.DataSource = mp.listarTodos(u);
-            //dgvDados.Columns[0].ReadOnly = true;
         }
 
         private void btnCanvas_Click(object sender, EventArgs e)
         {
-            frmCanvasInterativo canvas = new frmCanvasInterativo();
+            frmCanvasInterativo canvas = new frmCanvasInterativo(u);
             canvas.ShowDialog();
         }
 
         private void btnNovo_click(object sender, EventArgs e)
         {
-            frmCadastroAlteracaoProjeto projeto = new frmCadastroAlteracaoProjeto(u);
+            frmCadastroAlteracaoProjeto projeto = new frmCadastroAlteracaoProjeto(u, 0);
             projeto.ShowDialog();
             CarregaGrid();
         }
 
         private void btnTime_Click(object sender, EventArgs e)
         {
-            frmListaUsuario listar = new frmListaUsuario();
+            frmListaUsuario listar = new frmListaUsuario(u);
             listar.Show();
         }
 
@@ -76,6 +61,84 @@ namespace StartupManager
                 projeto.ShowDialog();
                 CarregaGrid();
             }
+        }
+
+        private void InterfaceUsuario()
+        {
+            if (u.Cargo != "CEO")
+            {
+                btnNovo.Visible = false;
+                btnAlterar.Visible = false;
+                btnExcluir.Visible = false;
+                //btnTime.Visible = false;
+                //lblTime.Visible = false;
+            }
+        }
+
+        private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (txtConsulta.Text.Length > 0)
+            {
+                this.btnBuscar_Click(sender, e);
+            }
+            else
+            {
+                CarregaGrid();
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMenu_Shown(object sender, EventArgs e)
+        {
+            CarregaGrid();
+        }
+
+        private void frmMenu_Activated(object sender, EventArgs e)
+        {
+            CarregaGrid();
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEquipe_Click(object sender, EventArgs e)
+        {
+            if (dgvDados.SelectedRows.Count == 1)
+            {
+                int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
+                frmEquipe equipe = new frmEquipe(id);
+                equipe.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Selecione apenas um Registro!!!");
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            /*
+            if (dgvDados.SelectedRows.Count == 1)
+            {
+                int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
+                DialogResult dr = MessageBox.Show("Deseja realmente EXCLUIR ?", "StartUp Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (dr == DialogResult.Yes)
+                {
+                    up.Excluir(id);
+                    CarregaGrid();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione apenas um Registro!!!");
+            }
+            */
         }
     }
 }

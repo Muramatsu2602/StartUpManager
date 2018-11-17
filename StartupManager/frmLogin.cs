@@ -88,7 +88,7 @@ namespace StartupManager
                     if (dados.Read())
                     {
 
-                        
+
                         u = new Usuario();
                         u.IdUser = Int64.Parse(dados["id_user"].ToString());
                         u.Nome = (string)dados["nome"];
@@ -100,17 +100,19 @@ namespace StartupManager
                         u.Data_exclusao = dados["data_exclusao"].ToString();
                         u.Senha = (string)dados["senha"];
                         u.Sexo = Char.Parse(dados["sexo"].ToString());
+
                         ConexaoBanco.Desconectar();
                         this.Hide();
                         frmMenu menu = new frmMenu(u);
                         menu.Show();
                         Limpa();
-                      
+
 
                     }
                     else
                     {
                         MessageBox.Show("Colaborador não encontrado!", "StartUpManager 72B", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ConexaoBanco.Desconectar();
                         Limpa();
                     }
 

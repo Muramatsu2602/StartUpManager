@@ -11,11 +11,14 @@ using System.Windows.Forms;
 namespace StartupManager
 {
     public partial class frmCanvasInterativo : MaterialSkin.Controls.MaterialForm
-   
+
     {
-        public frmCanvasInterativo()
+        private Usuario u;
+        public frmCanvasInterativo(Usuario u)
         {
             InitializeComponent();
+            this.u = u;
+          
         }
 
         private void frmCanvasInterativo_Load(object sender, EventArgs e)
@@ -44,29 +47,29 @@ namespace StartupManager
             
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void btnAjuda_Click(object sender, EventArgs e)
+        {
+            frmAjudaCanvas ajuda = new frmAjudaCanvas();
+            ajuda.ShowDialog();
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        private void InterfaceUsuario()
         {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
+            if (u.Cargo != "CEO")
+            {
+                btnSalvar.Visible = false;
+                txtCanais.Enabled = false;
+                txtEstruturaDeCustos.Enabled = false;
+                txtFontesDeReceita.Enabled = false;
+                txtPrincipaisParcerias.Enabled = false;
+                txtPropostaDeValor.Enabled = false;
+                txtRecursos.Enabled = false;
+                txtRelacionamentoComClientes.Enabled = false;
+                txtRecursos.Enabled = false;
+                txtSegmentoDeClientes.Enabled = false;
+                txtAtividadesPrincipais.Enabled = false;
+            }
         }
     }
 }

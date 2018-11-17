@@ -31,12 +31,18 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.lblNomeProjeto = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.txtSegmentoDeClientes = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtRelacionamentoComClientes = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtAtividadesPrincipais = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtRecursos = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtPrincipaisParcerias = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,31 +52,25 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtEstruturaDeCustos = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txtRelacionamentoComClientes = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtCanais = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.txtSegmentoDeClientes = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtFontesDeReceita = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnAjuda = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.SuspendLayout();
@@ -127,6 +127,124 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1024, 660);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.AutoSize = true;
+            this.panel7.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel7.Controls.Add(this.txtSegmentoDeClientes);
+            this.panel7.Controls.Add(this.label6);
+            this.panel7.Location = new System.Drawing.Point(819, 3);
+            this.panel7.Name = "panel7";
+            this.tableLayoutPanel1.SetRowSpan(this.panel7, 2);
+            this.panel7.Size = new System.Drawing.Size(202, 434);
+            this.panel7.TabIndex = 9;
+            // 
+            // txtSegmentoDeClientes
+            // 
+            this.txtSegmentoDeClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSegmentoDeClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtSegmentoDeClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSegmentoDeClientes.Location = new System.Drawing.Point(11, 49);
+            this.txtSegmentoDeClientes.Multiline = true;
+            this.txtSegmentoDeClientes.Name = "txtSegmentoDeClientes";
+            this.txtSegmentoDeClientes.Size = new System.Drawing.Size(180, 371);
+            this.txtSegmentoDeClientes.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(4, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(195, 45);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "SEGMENTO DE CLIENTES";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.AutoSize = true;
+            this.panel5.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel5.Controls.Add(this.txtRelacionamentoComClientes);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Location = new System.Drawing.Point(615, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(198, 214);
+            this.panel5.TabIndex = 7;
+            // 
+            // txtRelacionamentoComClientes
+            // 
+            this.txtRelacionamentoComClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRelacionamentoComClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtRelacionamentoComClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRelacionamentoComClientes.Location = new System.Drawing.Point(9, 49);
+            this.txtRelacionamentoComClientes.Multiline = true;
+            this.txtRelacionamentoComClientes.Name = "txtRelacionamentoComClientes";
+            this.txtRelacionamentoComClientes.Size = new System.Drawing.Size(180, 152);
+            this.txtRelacionamentoComClientes.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(0, 5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(195, 45);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "RELACIONAMENTO COM CLIENTES";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoSize = true;
+            this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Controls.Add(this.txtAtividadesPrincipais);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(207, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(198, 214);
+            this.panel1.TabIndex = 3;
+            // 
+            // txtAtividadesPrincipais
+            // 
+            this.txtAtividadesPrincipais.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAtividadesPrincipais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(230)))), ((int)(((byte)(253)))));
+            this.txtAtividadesPrincipais.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAtividadesPrincipais.Location = new System.Drawing.Point(9, 49);
+            this.txtAtividadesPrincipais.Multiline = true;
+            this.txtAtividadesPrincipais.Name = "txtAtividadesPrincipais";
+            this.txtAtividadesPrincipais.Size = new System.Drawing.Size(180, 152);
+            this.txtAtividadesPrincipais.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(195, 45);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "ATIVIDADES PRINCIPAIS";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -136,9 +254,9 @@
             this.panel2.BackColor = System.Drawing.Color.LightSkyBlue;
             this.panel2.Controls.Add(this.txtRecursos);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(207, 222);
+            this.panel2.Location = new System.Drawing.Point(207, 223);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(198, 213);
+            this.panel2.Size = new System.Drawing.Size(198, 214);
             this.panel2.TabIndex = 2;
             // 
             // txtRecursos
@@ -151,7 +269,7 @@
             this.txtRecursos.Location = new System.Drawing.Point(9, 49);
             this.txtRecursos.Multiline = true;
             this.txtRecursos.Name = "txtRecursos";
-            this.txtRecursos.Size = new System.Drawing.Size(180, 151);
+            this.txtRecursos.Size = new System.Drawing.Size(180, 152);
             this.txtRecursos.TabIndex = 3;
             // 
             // label2
@@ -166,45 +284,6 @@
             this.label2.Text = "RECURSOS PRINCIPAIS";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoSize = true;
-            this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(207, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(198, 213);
-            this.panel1.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(230)))), ((int)(((byte)(253)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(9, 49);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 151);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 45);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ATIVIDADES PRINCIPAIS";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -217,7 +296,7 @@
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
             this.tableLayoutPanel1.SetRowSpan(this.panel3, 2);
-            this.panel3.Size = new System.Drawing.Size(198, 432);
+            this.panel3.Size = new System.Drawing.Size(198, 434);
             this.panel3.TabIndex = 4;
             // 
             // txtPrincipaisParcerias
@@ -230,7 +309,7 @@
             this.txtPrincipaisParcerias.Location = new System.Drawing.Point(9, 49);
             this.txtPrincipaisParcerias.Multiline = true;
             this.txtPrincipaisParcerias.Name = "txtPrincipaisParcerias";
-            this.txtPrincipaisParcerias.Size = new System.Drawing.Size(180, 370);
+            this.txtPrincipaisParcerias.Size = new System.Drawing.Size(180, 372);
             this.txtPrincipaisParcerias.TabIndex = 3;
             // 
             // label3
@@ -257,7 +336,7 @@
             this.panel4.Location = new System.Drawing.Point(411, 3);
             this.panel4.Name = "panel4";
             this.tableLayoutPanel1.SetRowSpan(this.panel4, 2);
-            this.panel4.Size = new System.Drawing.Size(198, 432);
+            this.panel4.Size = new System.Drawing.Size(198, 434);
             this.panel4.TabIndex = 5;
             // 
             // txtPropostaDeValor
@@ -270,7 +349,7 @@
             this.txtPropostaDeValor.Location = new System.Drawing.Point(9, 37);
             this.txtPropostaDeValor.Multiline = true;
             this.txtPropostaDeValor.Name = "txtPropostaDeValor";
-            this.txtPropostaDeValor.Size = new System.Drawing.Size(180, 382);
+            this.txtPropostaDeValor.Size = new System.Drawing.Size(180, 384);
             this.txtPropostaDeValor.TabIndex = 3;
             // 
             // label4
@@ -295,9 +374,9 @@
             this.tableLayoutPanel1.SetColumnSpan(this.panel8, 2);
             this.panel8.Controls.Add(this.txtEstruturaDeCustos);
             this.panel8.Controls.Add(this.label8);
-            this.panel8.Location = new System.Drawing.Point(3, 441);
+            this.panel8.Location = new System.Drawing.Point(3, 443);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(402, 216);
+            this.panel8.Size = new System.Drawing.Size(402, 214);
             this.panel8.TabIndex = 6;
             // 
             // txtEstruturaDeCustos
@@ -310,7 +389,7 @@
             this.txtEstruturaDeCustos.Location = new System.Drawing.Point(9, 32);
             this.txtEstruturaDeCustos.Multiline = true;
             this.txtEstruturaDeCustos.Name = "txtEstruturaDeCustos";
-            this.txtEstruturaDeCustos.Size = new System.Drawing.Size(384, 172);
+            this.txtEstruturaDeCustos.Size = new System.Drawing.Size(384, 170);
             this.txtEstruturaDeCustos.TabIndex = 7;
             // 
             // label8
@@ -325,45 +404,6 @@
             this.label8.Text = "ESTRUTURA DE CUSTOS";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.AutoSize = true;
-            this.panel5.BackColor = System.Drawing.Color.PaleGreen;
-            this.panel5.Controls.Add(this.txtRelacionamentoComClientes);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(615, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(198, 213);
-            this.panel5.TabIndex = 7;
-            // 
-            // txtRelacionamentoComClientes
-            // 
-            this.txtRelacionamentoComClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRelacionamentoComClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtRelacionamentoComClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRelacionamentoComClientes.Location = new System.Drawing.Point(9, 49);
-            this.txtRelacionamentoComClientes.Multiline = true;
-            this.txtRelacionamentoComClientes.Name = "txtRelacionamentoComClientes";
-            this.txtRelacionamentoComClientes.Size = new System.Drawing.Size(180, 151);
-            this.txtRelacionamentoComClientes.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(195, 45);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "RELACIONAMENTO COM CLIENTES";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -373,9 +413,9 @@
             this.panel6.BackColor = System.Drawing.Color.PaleGreen;
             this.panel6.Controls.Add(this.txtCanais);
             this.panel6.Controls.Add(this.label7);
-            this.panel6.Location = new System.Drawing.Point(615, 222);
+            this.panel6.Location = new System.Drawing.Point(615, 223);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(198, 213);
+            this.panel6.Size = new System.Drawing.Size(198, 214);
             this.panel6.TabIndex = 8;
             // 
             // txtCanais
@@ -388,7 +428,7 @@
             this.txtCanais.Location = new System.Drawing.Point(9, 48);
             this.txtCanais.Multiline = true;
             this.txtCanais.Name = "txtCanais";
-            this.txtCanais.Size = new System.Drawing.Size(180, 151);
+            this.txtCanais.Size = new System.Drawing.Size(180, 152);
             this.txtCanais.TabIndex = 5;
             // 
             // label7
@@ -403,46 +443,6 @@
             this.label7.Text = "CANAIS";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.AutoSize = true;
-            this.panel7.BackColor = System.Drawing.Color.PaleGreen;
-            this.panel7.Controls.Add(this.txtSegmentoDeClientes);
-            this.panel7.Controls.Add(this.label6);
-            this.panel7.Location = new System.Drawing.Point(819, 3);
-            this.panel7.Name = "panel7";
-            this.tableLayoutPanel1.SetRowSpan(this.panel7, 2);
-            this.panel7.Size = new System.Drawing.Size(202, 432);
-            this.panel7.TabIndex = 9;
-            // 
-            // txtSegmentoDeClientes
-            // 
-            this.txtSegmentoDeClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSegmentoDeClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtSegmentoDeClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSegmentoDeClientes.Location = new System.Drawing.Point(11, 49);
-            this.txtSegmentoDeClientes.Multiline = true;
-            this.txtSegmentoDeClientes.Name = "txtSegmentoDeClientes";
-            this.txtSegmentoDeClientes.Size = new System.Drawing.Size(180, 369);
-            this.txtSegmentoDeClientes.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(4, 5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(195, 45);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "SEGMENTO DE CLIENTES";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel9
             // 
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -453,9 +453,9 @@
             this.tableLayoutPanel1.SetColumnSpan(this.panel9, 2);
             this.panel9.Controls.Add(this.txtFontesDeReceita);
             this.panel9.Controls.Add(this.label9);
-            this.panel9.Location = new System.Drawing.Point(615, 441);
+            this.panel9.Location = new System.Drawing.Point(615, 443);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(406, 216);
+            this.panel9.Size = new System.Drawing.Size(406, 214);
             this.panel9.TabIndex = 10;
             // 
             // txtFontesDeReceita
@@ -468,7 +468,7 @@
             this.txtFontesDeReceita.Location = new System.Drawing.Point(7, 32);
             this.txtFontesDeReceita.Multiline = true;
             this.txtFontesDeReceita.Name = "txtFontesDeReceita";
-            this.txtFontesDeReceita.Size = new System.Drawing.Size(388, 172);
+            this.txtFontesDeReceita.Size = new System.Drawing.Size(388, 170);
             this.txtFontesDeReceita.TabIndex = 8;
             // 
             // label9
@@ -489,13 +489,24 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.BackColor = System.Drawing.Color.White;
-            this.panel10.Controls.Add(this.btnSair);
             this.panel10.Controls.Add(this.btnSalvar);
             this.panel10.Controls.Add(this.label10);
-            this.panel10.Location = new System.Drawing.Point(411, 441);
+            this.panel10.Location = new System.Drawing.Point(411, 443);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(198, 216);
+            this.panel10.Size = new System.Drawing.Size(198, 214);
             this.panel10.TabIndex = 11;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSalvar.Location = new System.Drawing.Point(9, 142);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(180, 60);
+            this.btnSalvar.TabIndex = 7;
+            this.btnSalvar.Text = "&Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -509,29 +520,18 @@
             this.label10.Text = "AÇÕES";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnSalvar
+            // btnAjuda
             // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnSalvar.Location = new System.Drawing.Point(9, 57);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(180, 60);
-            this.btnSalvar.TabIndex = 7;
-            this.btnSalvar.Text = "&Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            // 
-            // btnSair
-            // 
-            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnSair.Location = new System.Drawing.Point(9, 144);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(180, 60);
-            this.btnSair.TabIndex = 8;
-            this.btnSair.Text = "S&air";
-            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnAjuda.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnAjuda.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjuda.ForeColor = System.Drawing.Color.White;
+            this.btnAjuda.Location = new System.Drawing.Point(978, 29);
+            this.btnAjuda.Name = "btnAjuda";
+            this.btnAjuda.Size = new System.Drawing.Size(40, 31);
+            this.btnAjuda.TabIndex = 5;
+            this.btnAjuda.Text = "?";
+            this.btnAjuda.UseVisualStyleBackColor = false;
+            this.btnAjuda.Click += new System.EventHandler(this.btnAjuda_Click);
             // 
             // frmCanvasInterativo
             // 
@@ -539,6 +539,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.btnAjuda);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblNomeProjeto);
             this.Controls.Add(this.lbl1);
@@ -550,22 +551,22 @@
             this.Load += new System.EventHandler(this.frmCanvasInterativo_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -582,7 +583,7 @@
         private System.Windows.Forms.TextBox txtRecursos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAtividadesPrincipais;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtPrincipaisParcerias;
@@ -606,8 +607,8 @@
         private System.Windows.Forms.TextBox txtFontesDeReceita;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnAjuda;
     }
 }

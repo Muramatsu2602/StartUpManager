@@ -32,13 +32,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.RichTextBox();
-<<<<<<< HEAD
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-=======
             this.btnSalvar = new MaterialSkin.Controls.MaterialRaisedButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
->>>>>>> cb427f80893d68658a89566ca93e573f372e2ab1
+            this.lblIdCEO = new System.Windows.Forms.Label();
+            this.lblNomeCEO = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNome
@@ -81,20 +79,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Descrição";
             // 
-<<<<<<< HEAD
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(8, 256);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "CEO";
-            // 
-=======
->>>>>>> cb427f80893d68658a89566ca93e573f372e2ab1
             // txtDescricao
             // 
             this.txtDescricao.BackColor = System.Drawing.SystemColors.Control;
@@ -105,53 +89,66 @@
             this.txtDescricao.TabIndex = 7;
             this.txtDescricao.Text = "";
             // 
-<<<<<<< HEAD
             // label4
             // 
+            this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 280);
+            this.label4.Location = new System.Drawing.Point(8, 284);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 31);
+            this.label4.Size = new System.Drawing.Size(34, 23);
             this.label4.TabIndex = 8;
             this.label4.Text = "ID";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(53, 280);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(394, 31);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "NOME DO CEO";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-=======
             // btnSalvar
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvar.Depth = 0;
-            this.btnSalvar.Location = new System.Drawing.Point(358, 510);
+            this.btnSalvar.Location = new System.Drawing.Point(12, 510);
             this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Primary = true;
-            this.btnSalvar.Size = new System.Drawing.Size(90, 33);
+            this.btnSalvar.Size = new System.Drawing.Size(436, 33);
             this.btnSalvar.TabIndex = 69;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
->>>>>>> cb427f80893d68658a89566ca93e573f372e2ab1
+            // 
+            // lblIdCEO
+            // 
+            this.lblIdCEO.Location = new System.Drawing.Point(12, 318);
+            this.lblIdCEO.Name = "lblIdCEO";
+            this.lblIdCEO.Size = new System.Drawing.Size(103, 26);
+            this.lblIdCEO.TabIndex = 71;
+            // 
+            // lblNomeCEO
+            // 
+            this.lblNomeCEO.Location = new System.Drawing.Point(175, 318);
+            this.lblNomeCEO.Name = "lblNomeCEO";
+            this.lblNomeCEO.Size = new System.Drawing.Size(272, 26);
+            this.lblNomeCEO.TabIndex = 72;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(175, 284);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(135, 23);
+            this.label3.TabIndex = 73;
+            this.label3.Text = "Nome do CEO";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmCadastroAlteracaoProjeto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(461, 342);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-=======
             this.ClientSize = new System.Drawing.Size(461, 575);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblNomeCEO);
+            this.Controls.Add(this.lblIdCEO);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSalvar);
->>>>>>> cb427f80893d68658a89566ca93e573f372e2ab1
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -162,10 +159,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Projetos";
             this.Load += new System.EventHandler(this.frmCadastroAlteracaoProjeto_Load);
-<<<<<<< HEAD
-=======
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
->>>>>>> cb427f80893d68658a89566ca93e573f372e2ab1
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,11 +169,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox txtDescricao;
-<<<<<<< HEAD
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-=======
         private MaterialSkin.Controls.MaterialRaisedButton btnSalvar;
->>>>>>> cb427f80893d68658a89566ca93e573f372e2ab1
+        private System.Windows.Forms.Label lblIdCEO;
+        private System.Windows.Forms.Label lblNomeCEO;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -48,7 +48,7 @@ namespace StartupManager
             return dt;
         }
 
-        public Usuario BuscaId(int id)
+        public Usuario BuscaId(Int64 id)
         {
             Usuario u = null;
             try

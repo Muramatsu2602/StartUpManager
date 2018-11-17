@@ -120,7 +120,7 @@ namespace StartupManager
                             login.Show();
 
                         }
-                        listagem = new frmListaUsuario();
+                        listagem = new frmListaUsuario(null);
                         listagem.CarregaGrid();
                         this.Close();
 

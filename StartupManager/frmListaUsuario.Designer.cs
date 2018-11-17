@@ -113,7 +113,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(18, 38);
+            this.materialLabel2.Location = new System.Drawing.Point(6, 38);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(61, 19);
@@ -204,7 +204,7 @@
             // 
             this.materialDivider1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialDivider1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.materialDivider1.Depth = 0;
             this.materialDivider1.Location = new System.Drawing.Point(893, 64);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -216,7 +216,7 @@
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(894, 122);
@@ -229,7 +229,7 @@
             // btnProjeto
             // 
             this.btnProjeto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProjeto.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnProjeto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.btnProjeto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProjeto.Image = ((System.Drawing.Image)(resources.GetObject("btnProjeto.Image")));
             this.btnProjeto.Location = new System.Drawing.Point(921, 150);
@@ -238,6 +238,7 @@
             this.btnProjeto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnProjeto.TabIndex = 19;
             this.btnProjeto.TabStop = false;
+            this.btnProjeto.Click += new System.EventHandler(this.btnProjeto_Click);
             // 
             // frmListaUsuario
             // 

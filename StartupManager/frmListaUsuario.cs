@@ -13,9 +13,18 @@ namespace StartupManager
     public partial class frmListaUsuario : MaterialSkin.Controls.MaterialForm
     {
         ModelUsuario up = new ModelUsuario();
-        public frmListaUsuario()
+        private Usuario u;
+        public frmListaUsuario(Usuario u)
         {
             InitializeComponent();
+            this.u = u;
+            if (u.Cargo != "CEO")
+            {
+                btnNovo.Visible = false;
+                btnAlterar.Visible = false;
+                btnExcluir.Visible = false;
+            }
+         
             CarregaGrid();
             cmbCampo.SelectedIndex = 1;
         }
@@ -27,7 +36,7 @@ namespace StartupManager
 
         private void btnCanvas_Click(object sender, EventArgs e)
         {
-            frmCanvasInterativo canvas = new frmCanvasInterativo();
+            frmCanvasInterativo canvas = new frmCanvasInterativo(u);
             canvas.ShowDialog();
         }
 
@@ -109,6 +118,11 @@ namespace StartupManager
             CarregaGrid();
         }
 
-
+        private void btnProjeto_Click(object sender, EventArgs e)
+        {
+            frmMenu menu = new frmMenu(u);
+            menu.Show();
+            this.Close();
+        }
     }
 }
