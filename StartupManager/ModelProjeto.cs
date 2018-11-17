@@ -35,8 +35,8 @@ namespace StartupManager
             {
                 ConexaoBanco.Conectar();
 
-                String sql = "SELECT id_projeto AS \"ID\", nome AS \"NOME\", data_criacao AS \"CRIAÇÃO\",id_ceo AS \"CEO\" FROM projeto ";
-                sql += "WHERE data_excluido IS NULL AND idProjeto=" + idProjeto;
+                String sql = "SELECT *FROM projeto ";
+                sql += "WHERE data_excluido IS NULL AND id_projeto=" + idProjeto;
                 dt = ConexaoBanco.SelecionarDataTable(sql);
             }
             catch (Exception ex)
@@ -65,6 +65,26 @@ namespace StartupManager
             con = null;
             return dt;
         }*/
+        public void Update(Projeto projeto)
+        {
+            try
+            {
+                String sql = "UPDATE projeto SET ";
+                sql += " nome = '" + projeto.Nome + "', ";
+                sql += " descricao  = '" + projeto.Descricao + "' ";
+                sql += " WHERE id_projeto = " + projeto.IdProjeto + ";";
+                ConexaoBanco.Executar(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar o Serviço !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            finally
+            {
+                ConexaoBanco.Desconectar();
+            }
+        }
         public void Insert(Projeto p)
         {
             string sql = "insert into projeto" +

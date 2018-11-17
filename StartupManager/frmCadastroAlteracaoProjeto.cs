@@ -13,7 +13,8 @@ namespace StartupManager
     public partial class frmCadastroAlteracaoProjeto : MaterialSkin.Controls.MaterialForm
 
     {
-        private Usuario u;    
+        private Usuario u;
+        ModelProjeto modelProjeto = new ModelProjeto();
         private Projeto projeto = new Projeto();
         private int id;
         public frmCadastroAlteracaoProjeto(Usuario u)
@@ -21,7 +22,7 @@ namespace StartupManager
             InitializeComponent();
             this.u = u;
             // testar recebimento do ID para mudar o texto entre "CADASTRO" e "ALTERACAO", que nem PHP
-                this.Text = "CADASTRO";
+            this.Text = "CADASTRO";
             id = 0;
         }
         public frmCadastroAlteracaoProjeto(Usuario u, int idProjeto)
@@ -30,13 +31,16 @@ namespace StartupManager
             this.u = u;
             // testar recebimento do ID para mudar o texto entre "CADASTRO" e "ALTERACAO", que nem PHP
             this.Text = "ALTERAR";
+            btnSalvar.Text = "ATUALIZAR";
             id = idProjeto;
+            carregaCampos();
         }
         private void carregaCampos()
         {
-            ModelProjeto projeto = new ModelProjeto();
-            /*ModelProjeto dados = projeto.listarTodos(id);
-            txtNome = dados.*/
+            DataTable rowsDt = modelProjeto.listarTodos(id);
+            projeto.IdProjeto = id;
+            txtNome.Text = rowsDt.Rows[0][1].ToString();
+            txtDescricao.Text = rowsDt.Rows[0][3].ToString();
         }
         private void frmCadastroAlteracaoProjeto_Load(object sender, EventArgs e)
         {
@@ -61,7 +65,6 @@ namespace StartupManager
         }
         private void pegaCampos()
         {
-            
             projeto.Id_ceo = (int)u.IdUser;
             projeto.Nome = txtNome.Text;
             projeto.Descricao = txtDescricao.Text;
@@ -97,6 +100,7 @@ namespace StartupManager
                     try
                     {
                         pegaCampos();
+                        modelProjeto.Update(projeto);
                         MessageBox.Show("Usuario Alterado");
                         this.Close();
                     }
