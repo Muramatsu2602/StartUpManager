@@ -27,5 +27,7 @@ namespace StartupManager
             frmAjudaCanvas ajuda = new frmAjudaCanvas();
             ajuda.ShowDialog();
         }
+
+        
     }
 }
