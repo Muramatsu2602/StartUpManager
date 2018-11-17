@@ -223,7 +223,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 25);
             this.label2.TabIndex = 21;
-            this.label2.Text = "Projetos";
+            this.label2.Text = "PROJETOS";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnProjeto
