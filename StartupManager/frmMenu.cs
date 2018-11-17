@@ -63,5 +63,23 @@ namespace StartupManager
                 CarregaGrid();
             }
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (dgvDados.SelectedRows.Count == 1)
+            {
+                int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
+                DialogResult dr = MessageBox.Show("Deseja realmente EXCLUIR ?", "StartUp Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (dr == DialogResult.Yes)
+                {
+                    mp.excluir(id);
+                    CarregaGrid();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione apenas um Registro!!!");
+            }
+        }
     }
 }

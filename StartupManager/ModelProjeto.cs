@@ -86,6 +86,25 @@ namespace StartupManager
                 ConexaoBanco.Desconectar();
             }
         }
+        public void excluir(int idProjeto)
+        {
+            try
+            {
+                String sql = "UPDATE projeto SET ";
+                sql += " data_excluido  = '" + DateTime.Now.ToString("dd/MM/yyyy") + "' ";
+                sql += " WHERE id_projeto = " + idProjeto + ";";
+                ConexaoBanco.Executar(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar o Serviço !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            finally
+            {
+                ConexaoBanco.Desconectar();
+            }
+        }
         public void Insert(Projeto p)
         {
             string sql = "insert into projeto" +

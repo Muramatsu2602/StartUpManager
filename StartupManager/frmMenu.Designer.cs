@@ -40,7 +40,7 @@
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExcluit = new System.Windows.Forms.Button();
             this.btnCanvas = new System.Windows.Forms.Button();
             this.btnProjeto = new System.Windows.Forms.PictureBox();
             this.btnTime = new System.Windows.Forms.PictureBox();
@@ -185,16 +185,17 @@
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_click);
             // 
-            // button1
+            // btnExcluit
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.Location = new System.Drawing.Point(653, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 33);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "&Deletar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnExcluit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcluit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcluit.Location = new System.Drawing.Point(653, 76);
+            this.btnExcluit.Name = "btnExcluit";
+            this.btnExcluit.Size = new System.Drawing.Size(90, 33);
+            this.btnExcluit.TabIndex = 13;
+            this.btnExcluit.Text = "&Deletar";
+            this.btnExcluit.UseVisualStyleBackColor = false;
+            this.btnExcluit.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnCanvas
             // 
@@ -271,7 +272,7 @@
             this.Controls.Add(this.btnTime);
             this.Controls.Add(this.btnProjeto);
             this.Controls.Add(this.btnCanvas);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExcluit);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.materialDivider1);
@@ -308,7 +309,7 @@
         private System.Windows.Forms.TextBox txtConsulta;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExcluit;
         private System.Windows.Forms.Button btnCanvas;
         private System.Windows.Forms.PictureBox btnProjeto;
         private System.Windows.Forms.PictureBox btnTime;
