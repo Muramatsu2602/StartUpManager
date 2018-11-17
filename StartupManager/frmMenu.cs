@@ -22,10 +22,6 @@ namespace StartupManager
             CarregaGrid();
         }
 
-        private void frmMenu_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -44,9 +40,9 @@ namespace StartupManager
             canvas.ShowDialog();
         }
 
-        private void NovoAlterar(object sender, EventArgs e)
+        private void btnNovo_click(object sender, EventArgs e)
         {
-            frmCadastroAlteracaoProjeto projeto = new frmCadastroAlteracaoProjeto(u,0);
+            frmCadastroAlteracaoProjeto projeto = new frmCadastroAlteracaoProjeto(u);
             projeto.ShowDialog();
             CarregaGrid();
         }
@@ -55,6 +51,17 @@ namespace StartupManager
         {
             frmListaUsuario listar = new frmListaUsuario();
             listar.Show();
+        }
+
+        private void btnAlterar_click(object sender, EventArgs e)
+        {
+            if (dgvDados.SelectedRows.Count == 1)
+            {
+                int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
+                frmCadastroAlteracaoProjeto projeto = new frmCadastroAlteracaoProjeto(u, id);
+                projeto.ShowDialog();
+                CarregaGrid();
+            }
         }
     }
 }

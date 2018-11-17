@@ -13,21 +13,30 @@ namespace StartupManager
     public partial class frmCadastroAlteracaoProjeto : MaterialSkin.Controls.MaterialForm
 
     {
-        Usuario u;
-        frmMenu listagem;
+        private Usuario u;    
         private Projeto projeto = new Projeto();
         private int id;
-        public frmCadastroAlteracaoProjeto(Usuario u, int id)
+        public frmCadastroAlteracaoProjeto(Usuario u)
         {
             InitializeComponent();
             this.u = u;
             // testar recebimento do ID para mudar o texto entre "CADASTRO" e "ALTERACAO", que nem PHP
-            if (id == 0)
-            {
-                this.id = id;
                 this.Text = "CADASTRO";
-            }
-            var s = this.u.IdUser;
+            id = 0;
+        }
+        public frmCadastroAlteracaoProjeto(Usuario u, int idProjeto)
+        {
+            InitializeComponent();
+            this.u = u;
+            // testar recebimento do ID para mudar o texto entre "CADASTRO" e "ALTERACAO", que nem PHP
+            this.Text = "ALTERAR";
+            id = idProjeto;
+        }
+        private void carregaCampos()
+        {
+            ModelProjeto projeto = new ModelProjeto();
+            /*ModelProjeto dados = projeto.listarTodos(id);
+            txtNome = dados.*/
         }
         private void frmCadastroAlteracaoProjeto_Load(object sender, EventArgs e)
         {
@@ -54,7 +63,6 @@ namespace StartupManager
         {
             
             projeto.Id_ceo = (int)u.IdUser;
-            var teste = u.IdUser;
             projeto.Nome = txtNome.Text;
             projeto.Descricao = txtDescricao.Text;
             projeto.DataCriacao = DateTime.Now.ToString("dd/MM/yyyy");
@@ -84,12 +92,11 @@ namespace StartupManager
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                /*else
+                else
                 {
                     try
                     {
                         pegaCampos();
-                        model.Update(u);
                         MessageBox.Show("Usuario Alterado");
                         this.Close();
                     }
@@ -98,7 +105,7 @@ namespace StartupManager
                         MessageBox.Show("Erro de execução da QUERY !!! " + exception.Message, "StartUpManager 72B",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }*/
+                }
 
             }
         }

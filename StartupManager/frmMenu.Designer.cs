@@ -171,7 +171,7 @@
             this.btnNovo.TabIndex = 11;
             this.btnNovo.Text = "&Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.NovoAlterar);
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_click);
             // 
             // btnAlterar
             // 
@@ -183,7 +183,7 @@
             this.btnAlterar.TabIndex = 12;
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
-            this.btnAlterar.Click += new System.EventHandler(this.NovoAlterar);
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_click);
             // 
             // button1
             // 
@@ -285,7 +285,6 @@
             this.Text = "StartUp Manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
-            this.Load += new System.EventHandler(this.frmMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
