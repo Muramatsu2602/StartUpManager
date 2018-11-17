@@ -28,6 +28,24 @@ namespace StartupManager
             ConexaoBanco.Desconectar();
             return dt;
         }
+        public DataTable listarTodos(int idProjeto)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                ConexaoBanco.Conectar();
+
+                String sql = "SELECT id_projeto AS \"ID\", nome AS \"NOME\", data_criacao AS \"CRIAÇÃO\",id_ceo AS \"CEO\" FROM projeto ";
+                sql += "WHERE data_excluido IS NULL AND idProjeto=" + idProjeto;
+                dt = ConexaoBanco.SelecionarDataTable(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao buscar todos os registros !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            ConexaoBanco.Desconectar();
+            return dt;
+        }
         /*
         public DataTable BuscaPorCampo(string campo, string busca)
         {
@@ -50,19 +68,15 @@ namespace StartupManager
         public void Insert(Projeto p)
         {
             string sql = "insert into projeto" +
-                         "(descricao, nome, data_criacao,data_excluido,id_canvas,id_projeto,id_ceo,ultima_alteracao)" +
-                         "values(@1, @2, @3, @4, @5,@6,@7,@8)";
+                         "(descricao, nome, data_criacao,id_ceo)" +
+                         "values(@1, @2, @3, @4)";
 
             List<object> param = new List<object>();
 
             param.Add(p.Descricao);
             param.Add(p.Nome);
             param.Add(p.DataCriacao);
-            param.Add(p.DataExcluido);
-            param.Add(p.IdCanvas);
-            param.Add(p.IdProjeto);
             param.Add(p.Id_ceo);
-            param.Add(p.UltimaAlteracao);
 
 
             ConexaoBanco.Executar(sql, param);

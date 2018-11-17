@@ -162,13 +162,13 @@
             // 
             this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnNovo.Location = new System.Drawing.Point(461, 77);
+            this.btnNovo.Location = new System.Drawing.Point(461, 75);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(90, 33);
             this.btnNovo.TabIndex = 11;
             this.btnNovo.Text = "&Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.NovoAlterar);
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_click);
             // 
             // btnAlterar
             // 
@@ -180,7 +180,7 @@
             this.btnAlterar.TabIndex = 12;
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
-            this.btnAlterar.Click += new System.EventHandler(this.NovoAlterar);
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_click);
             // 
             // btnExcluir
             // 
@@ -254,7 +254,6 @@
             this.Text = "StartUp Manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
-            this.Load += new System.EventHandler(this.frmMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

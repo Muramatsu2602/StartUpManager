@@ -18,9 +18,11 @@ namespace StartupManager
         {
             this.u = u;
             InitializeComponent();
+            
             CarregaGrid();
         }
 
+<<<<<<< HEAD
         private void frmMenu_Load(object sender, EventArgs e)
         {
             if (u.Cargo != "CEO")
@@ -32,13 +34,15 @@ namespace StartupManager
                 lblTime.Visible = false;
             }
         }
+=======
+>>>>>>> cb427f80893d68658a89566ca93e573f372e2ab1
 
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
 
-        private void CarregaGrid()
+        public void CarregaGrid()
         {
             dgvDados.DataSource = mp.listarTodos(u);
             //dgvDados.Columns[0].ReadOnly = true;
@@ -50,17 +54,28 @@ namespace StartupManager
             canvas.ShowDialog();
         }
 
-        private void NovoAlterar(object sender, EventArgs e)
+        private void btnNovo_click(object sender, EventArgs e)
         {
-            frmCadastroAlteracaoProjeto projeto = new frmCadastroAlteracaoProjeto();
+            frmCadastroAlteracaoProjeto projeto = new frmCadastroAlteracaoProjeto(u);
             projeto.ShowDialog();
-
+            CarregaGrid();
         }
 
         private void btnTime_Click(object sender, EventArgs e)
         {
             frmListaUsuario listar = new frmListaUsuario();
             listar.Show();
+        }
+
+        private void btnAlterar_click(object sender, EventArgs e)
+        {
+            if (dgvDados.SelectedRows.Count == 1)
+            {
+                int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
+                frmCadastroAlteracaoProjeto projeto = new frmCadastroAlteracaoProjeto(u, id);
+                projeto.ShowDialog();
+                CarregaGrid();
+            }
         }
     }
 }
