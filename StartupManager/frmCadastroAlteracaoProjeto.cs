@@ -74,8 +74,6 @@ namespace StartupManager
                         i.Insert(projeto);
                         MessageBox.Show("Dados salvos com sucesso!", "StartUpManager 72B",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        listagem = new frmMenu(u);   
-                        listagem.CarregaGrid();
                         this.Close();
 
 

@@ -48,7 +48,7 @@ namespace StartupManager
         {
             frmCadastroAlteracaoProjeto projeto = new frmCadastroAlteracaoProjeto(u,0);
             projeto.ShowDialog();
-
+            CarregaGrid();
         }
 
         private void btnTime_Click(object sender, EventArgs e)
