@@ -19,7 +19,7 @@ namespace StartupManager
 
                 String sql = "SELECT p.id_projeto AS  \"ID\", p.nome AS \"NOME\",p.data_criacao AS  \"CRIAÇÃO \", u.nome AS  \"CEO \" FROM projeto AS \"p\" ";
                 sql += " INNER JOIN usuario AS \"u\" ON (u.id_user = p.id_ceo)";
-                sql += " WHERE id_ceo= "+u.IdUser+" ;";
+                sql += " WHERE id_ceo= " + u.IdUser + " AND data_excluido IS NULL ;";
 
                 dt = ConexaoBanco.SelecionarDataTable(sql);
             }
@@ -31,25 +31,7 @@ namespace StartupManager
             return dt;
         }
 
-        /*
-        public DataTable BuscaPorCampo(string campo, string busca)
-        {
-            DataTable dt = new DataTable();
-            try
-            {
-                con = new Conexao();
-                con.Conectar();
-                String sql = "SELECT idcliente, nome, tipo_pessoa, doc_fed, doc_est, dt_nasc, rua, numero, bairro, cidade, estado, cep, telefones, email FROM clientes";
-                sql += " WHERE " + campo + " LIKE '%" + busca + "%';";
-                dt = con.RetDataTable(sql);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao buscar os registros !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            con = null;
-            return dt;
-        }*/
+       
         public void Insert(Projeto p)
         {
             string sql = "insert into projeto" +
@@ -148,5 +130,49 @@ namespace StartupManager
             }
         }
 
+        public void Excluir(int id)
+        {
+            try
+            {
+                ConexaoBanco.Conectar();
+                String sql = "UPDATE projeto SET data_excluido= " + "'" + DateTime.Now + "'" + "WHERE id_projeto = " + id + ";";
+                ConexaoBanco.Executar(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir o Serviço !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                ConexaoBanco.Desconectar();
+            }
+        }
+
+        public DataTable BuscaPorCampo(string campo, string busca)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                ConexaoBanco.Conectar();
+
+                String sql = "SELECT  id_projeto AS \"ID\" , nome AS \"NOME\", descricao AS \"DESCRIÇÃO\", data_criacao AS \"CRIAÇÃO\", id_ceo AS \"ID do CEO\"  FROM projeto";
+                if (campo.Equals("id_projeto"))
+                {
+                    sql += " WHERE " + campo + " =" + Convert.ToInt64(busca) + ";";
+                }
+                else
+                {
+                    sql += " WHERE UPPER(" + campo + ") LIKE UPPER('%" + busca + "%');";
+                }
+
+                dt = ConexaoBanco.SelecionarDataTable(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao buscar os registros de projetos !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            ConexaoBanco.Desconectar();
+            return dt;
+        }
     }
 }

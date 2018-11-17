@@ -35,17 +35,16 @@
             this.btnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtConsulta = new System.Windows.Forms.TextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbCampo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnExcluit = new System.Windows.Forms.Button();
             this.btnCanvas = new System.Windows.Forms.Button();
             this.btnTime = new System.Windows.Forms.PictureBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.btnEquipe = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnTime)).BeginInit();
@@ -69,6 +68,7 @@
             this.dgvDados.Size = new System.Drawing.Size(867, 559);
             this.dgvDados.TabIndex = 0;
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
+            this.dgvDados.DoubleClick += new System.EventHandler(this.dgvDados_DoubleClick);
             // 
             // groupBox1
             // 
@@ -78,7 +78,7 @@
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtConsulta);
             this.groupBox1.Controls.Add(this.materialLabel2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbCampo);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(13, 685);
@@ -100,6 +100,7 @@
             this.btnLimpar.TabIndex = 5;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnBuscar
             // 
@@ -118,6 +119,8 @@
             // 
             // txtConsulta
             // 
+            this.txtConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtConsulta.Location = new System.Drawing.Point(296, 30);
             this.txtConsulta.Name = "txtConsulta";
             this.txtConsulta.Size = new System.Drawing.Size(502, 31);
@@ -136,13 +139,17 @@
             this.materialLabel2.TabIndex = 1;
             this.materialLabel2.Text = "Campo:";
             // 
-            // comboBox1
+            // cmbCampo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(94, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 33);
-            this.comboBox1.TabIndex = 0;
+            this.cmbCampo.FormattingEnabled = true;
+            this.cmbCampo.Items.AddRange(new object[] {
+            "id_projeto",
+            "nome",
+            "descricao"});
+            this.cmbCampo.Location = new System.Drawing.Point(94, 30);
+            this.cmbCampo.Name = "cmbCampo";
+            this.cmbCampo.Size = new System.Drawing.Size(196, 33);
+            this.cmbCampo.TabIndex = 0;
             // 
             // label1
             // 
@@ -192,30 +199,6 @@
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_click);
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExcluir.Location = new System.Drawing.Point(476, 76);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(90, 33);
-            this.btnExcluir.TabIndex = 13;
-            this.btnExcluir.Text = "&Deletar";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-
-            // btnExcluit
-            // 
-            this.btnExcluit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcluit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExcluit.Location = new System.Drawing.Point(653, 76);
-            this.btnExcluit.Name = "btnExcluit";
-            this.btnExcluit.Size = new System.Drawing.Size(90, 33);
-            this.btnExcluit.TabIndex = 13;
-            this.btnExcluit.Text = "&Deletar";
-            this.btnExcluit.UseVisualStyleBackColor = false;
-            this.btnExcluit.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
             // btnCanvas
             // 
             this.btnCanvas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -234,7 +217,7 @@
             this.btnTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.btnTime.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTime.Image = ((System.Drawing.Image)(resources.GetObject("btnTime.Image")));
-            this.btnTime.Location = new System.Drawing.Point(925, 152);
+            this.btnTime.Location = new System.Drawing.Point(921, 152);
             this.btnTime.Name = "btnTime";
             this.btnTime.Size = new System.Drawing.Size(70, 70);
             this.btnTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -267,6 +250,18 @@
             this.btnEquipe.UseVisualStyleBackColor = false;
             this.btnEquipe.Click += new System.EventHandler(this.btnEquipe_Click);
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcluir.Location = new System.Drawing.Point(476, 77);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(90, 33);
+            this.btnExcluir.TabIndex = 13;
+            this.btnExcluir.Text = "&Deletar";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -277,7 +272,6 @@
             this.Controls.Add(this.btnTime);
             this.Controls.Add(this.btnCanvas);
             this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnExcluit);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.materialDivider1);
@@ -292,7 +286,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.frmMenu_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
-            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.Shown += new System.EventHandler(this.frmMenu_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -308,7 +301,7 @@
         private System.Windows.Forms.DataGridView dgvDados;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCampo;
         private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private MaterialSkin.Controls.MaterialRaisedButton btnLimpar;
@@ -316,11 +309,10 @@
         private System.Windows.Forms.TextBox txtConsulta;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnExcluit;
         private System.Windows.Forms.Button btnCanvas;
         private System.Windows.Forms.PictureBox btnTime;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Button btnEquipe;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

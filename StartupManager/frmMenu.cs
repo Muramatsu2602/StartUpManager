@@ -20,6 +20,8 @@ namespace StartupManager
             InitializeComponent();
             CarregaGrid();
             InterfaceUsuario();
+
+            cmbCampo.SelectedIndex = 0;
         }
 
 
@@ -70,8 +72,8 @@ namespace StartupManager
                 btnNovo.Visible = false;
                 btnAlterar.Visible = false;
                 btnExcluir.Visible = false;
-                //btnTime.Visible = false;
-                //lblTime.Visible = false;
+                btnEquipe.Visible = false;
+
             }
         }
 
@@ -90,6 +92,26 @@ namespace StartupManager
         private void btnBuscar_Click(object sender, EventArgs e)
         {
 
+            if (!String.IsNullOrWhiteSpace(txtConsulta.Text))
+            {
+                try
+                {
+                    dgvDados.DataSource = mp.BuscaPorCampo(cmbCampo.SelectedItem.ToString(), txtConsulta.Text.ToUpper());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERRO NA CONSULTA DE PROJETOS! \n Mais detalhes:" + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Preencha o campo com termos a serem consultados");
+                CarregaGrid();
+                txtConsulta.Focus();
+
+            }
+
+
         }
 
         private void frmMenu_Shown(object sender, EventArgs e)
@@ -102,10 +124,7 @@ namespace StartupManager
             CarregaGrid();
         }
 
-        private void frmMenu_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnEquipe_Click(object sender, EventArgs e)
         {
@@ -123,14 +142,14 @@ namespace StartupManager
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            /*
+
             if (dgvDados.SelectedRows.Count == 1)
             {
                 int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
                 DialogResult dr = MessageBox.Show("Deseja realmente EXCLUIR ?", "StartUp Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (dr == DialogResult.Yes)
                 {
-                    up.Excluir(id);
+                    mp.Excluir(id);
                     CarregaGrid();
                 }
             }
@@ -138,7 +157,23 @@ namespace StartupManager
             {
                 MessageBox.Show("Selecione apenas um Registro!!!");
             }
-            */
+
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+
+            txtConsulta.Text = null;
+            cmbCampo.SelectedIndex = 0;
+            CarregaGrid();
+
+        }
+
+        private void dgvDados_DoubleClick(object sender, EventArgs e)
+        {
+            txtConsulta.Text = null;
+            cmbCampo.SelectedIndex = 0;
+            CarregaGrid();
         }
     }
 }
