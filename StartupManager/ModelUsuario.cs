@@ -14,7 +14,7 @@ namespace StartupManager
         {
             string sql = "insert into usuario" +
             "(email, nome, senha,data_nasc,cpf,sexo,cargo)" +
-            "values(@1, @2, @3, @4, @5,@6,@7)";
+            "values(@1, @2, @3, @4, @5, @6, @7)";
 
             List<object> param = new List<object>();
 
@@ -118,7 +118,7 @@ namespace StartupManager
             try
             {
                 ConexaoBanco.Conectar();
-                String sql = "UPDATE usuario SET data_exclusao= " + "'" + DateTime.Now + "'" + "WHERE id_user = " + id + ";";
+                String sql = "UPDATE usuario SET data_exclusao= " + "'" + DateTime.Now.ToString("yyyy/MM/dd") + "'" + "WHERE id_user = " + id + ";";
                 ConexaoBanco.Executar(sql);
             }
             catch (Exception ex)

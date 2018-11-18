@@ -36,7 +36,8 @@ namespace StartupManager
 
         private void btnCanvas_Click(object sender, EventArgs e)
         {
-            frmCanvasInterativo canvas = new frmCanvasInterativo(u);
+            int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
+            frmCanvasInterativo canvas = new frmCanvasInterativo(u, id);
             canvas.ShowDialog();
         }
 

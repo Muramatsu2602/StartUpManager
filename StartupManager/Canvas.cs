@@ -28,6 +28,7 @@ namespace StartupManager
         public string RecursosChave { get => recursosChave; set => recursosChave = value; }
         public string EstruturaDados { get => estruturaDados; set => estruturaDados = value; }
         public string FonteReceita { get => fonteReceita; set => fonteReceita = value; }
+        public string Atividade_chave { get; set; }
         public string UltimaAlteracao { get => ultimaAlteracao; set => ultimaAlteracao = value; }
 
     }

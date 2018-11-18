@@ -115,7 +115,7 @@ namespace StartupManager
                 String sql = "UPDATE projeto SET ";
                 sql += " nome = '" + p.Nome + "', ";
                 sql += " descricao  = '" + p.Descricao + "', ";
-                sql += " ultima_alteracao  = '" + DateTime.Now + "' ";
+                sql += " ultima_alteracao  = '" + DateTime.Now.ToString("yyyy/MM/dd") + "' ";
                 sql += " WHERE id_projeto = " + p.IdProjeto + ";";
                 ConexaoBanco.Executar(sql);
             }
