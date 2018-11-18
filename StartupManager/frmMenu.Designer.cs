@@ -102,7 +102,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtConsulta.Location = new System.Drawing.Point(307, 58);
             this.txtConsulta.Name = "txtConsulta";
-            this.txtConsulta.Size = new System.Drawing.Size(502, 26);
+            this.txtConsulta.Size = new System.Drawing.Size(566, 26);
             this.txtConsulta.TabIndex = 3;
             // 
             // cmbCampo
