@@ -96,7 +96,6 @@ namespace StartupManager
             if (u.Cargo != "CEO")
             {
                 btnSalvar.Visible = false;
-                btnExcluir.Visible = false;
                 txtCanais.Enabled = false;
                 txtEstruturaDeCustos.Enabled = false;
                 txtFontesDeReceita.Enabled = false;

@@ -33,10 +33,18 @@ namespace StartupManager
 
         }
 
+        private void StartForm()
+        {
+            Application.Run(new frmSplashScreen());
+        }
+
         public frmLogin()
         {
-
+            Thread t = new Thread(new ThreadStart(StartForm));
+            t.Start();
+            Thread.Sleep(5000);
             InitializeComponent();
+            t.Abort();
             txtEmail.Focus();
         }
         private void Limpa()

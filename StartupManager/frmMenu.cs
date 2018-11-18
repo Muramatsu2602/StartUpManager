@@ -37,9 +37,16 @@ namespace StartupManager
 
         private void btnCanvas_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
-            frmCanvasInterativo canvas = new frmCanvasInterativo(u, id);
-            canvas.ShowDialog();
+            if (dgvDados.SelectedRows.Count == 1)
+            {
+                int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
+                frmCanvasInterativo canvas = new frmCanvasInterativo(u, id);
+                canvas.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Selecione apenas um Registro!!!");
+            }
         }
 
         private void btnNovo_click(object sender, EventArgs e)
@@ -63,6 +70,10 @@ namespace StartupManager
                 frmCadastroAlteracaoProjeto projeto = new frmCadastroAlteracaoProjeto(u, id);
                 projeto.ShowDialog();
                 CarregaGrid();
+            }
+            else
+            {
+                MessageBox.Show("Selecione apenas um Registro!!!");
             }
         }
 
