@@ -26,24 +26,7 @@ namespace StartupManager
             InitializeComponent();
 
             this.id = id;
-
-            #region VISUAL
-
-            /* VISUAL*/
-            var skinMenager = MaterialSkin.MaterialSkinManager.Instance;
-            skinMenager.AddFormToManage(this);
-            skinMenager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
-            skinMenager.ColorScheme = new MaterialSkin.ColorScheme
-                /* (MaterialSkin.Primary.Blue600, MaterialSkin.Primary.Blue700, MaterialSkin.Accent.Indigo100, MaterialSkin.TextShade.WHITE);*/
-                (
-                    MaterialSkin.Primary.Blue400, MaterialSkin.Primary.Blue500,
-                    MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue200,
-                    MaterialSkin.TextShade.WHITE
-                );
-
-            #endregion
-
-
+            //DeixaAzul();
             try
             {
 
@@ -151,6 +134,21 @@ namespace StartupManager
             }
         }
 
+        private void DeixaAzul()
+        {
+            /* VISUAL*/
+            var skinMenager = MaterialSkin.MaterialSkinManager.Instance;
+            skinMenager.AddFormToManage(this);
+            skinMenager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+            skinMenager.ColorScheme = new MaterialSkin.ColorScheme
+                /* (MaterialSkin.Primary.Blue600, MaterialSkin.Primary.Blue700, MaterialSkin.Accent.Indigo100, MaterialSkin.TextShade.WHITE);*/
+                (
+                    MaterialSkin.Primary.Blue400, MaterialSkin.Primary.Blue500,
+                    MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue200,
+                    MaterialSkin.TextShade.WHITE
+                );
+
+        }
         private void pegaCampos()
         {
             string result;
