@@ -14,13 +14,15 @@ namespace StartupManager
 
     {
         private Usuario u;
-        public frmCanvasInterativo(Usuario u)
+        private Canvas canvas = new Canvas();
+        private int idProjeto;
+        private ModelCanvas modelCanvas = new ModelCanvas();
+        public frmCanvasInterativo(Usuario u, int id)
         {
             InitializeComponent();
             this.u = u;
-          
+            idProjeto = id;
         }
-
         private void frmCanvasInterativo_Load(object sender, EventArgs e)
         {
 
@@ -31,13 +33,42 @@ namespace StartupManager
             frmAjudaCanvas ajuda = new frmAjudaCanvas();
             ajuda.ShowDialog();
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pegaCampos()
         {
-
+            canvas.Canais = txtCanais.Text;
+            canvas.EstruturaDados = txtEstruturaDeCustos.Text;
+            canvas.FonteReceita = txtFontesDeReceita.Text;
+            canvas.ParceriasChave = txtPrincipaisParcerias.Text;
+            canvas.PropostaDeValor = txtPropostaDeValor.Text;
+            canvas.RecursosChave = txtRecursos.Text;
+            canvas.Relacionamento = txtRelacionamentoComClientes.Text;
+            canvas.SegmentoChave = txtSegmentoDeClientes.Text;
+            canvas.UltimaAlteracao = DateTime.Now.ToString("dd/MM/yyyy");
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private bool validar()
+        {
+            if (!(String.IsNullOrWhiteSpace(txtAtividadesPrincipais.Text)))
+                return true;
+            if (!(String.IsNullOrWhiteSpace(txtCanais.Text)))
+                return true;
+            if (!(String.IsNullOrWhiteSpace(txtEstruturaDeCustos.Text)))
+                return true;
+            if (!(String.IsNullOrWhiteSpace(txtFontesDeReceita.Text)))
+                return true;
+            if (!(String.IsNullOrWhiteSpace(txtPrincipaisParcerias.Text)))
+                return true;
+            if (!(String.IsNullOrWhiteSpace(txtPropostaDeValor.Text)))
+                return true;
+            if (!(String.IsNullOrWhiteSpace(txtRecursos.Text)))
+                return true;
+            if (!(String.IsNullOrWhiteSpace(txtRelacionamentoComClientes.Text)))
+                return true;
+            if (!(String.IsNullOrWhiteSpace(txtSegmentoDeClientes.Text)))
+                return true;
+            MessageBox.Show("Um campo obrigatoriamente deve estar preenchido");
+            return false;
+        }
+        /*private void button1_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Deseja realmente SAIR ?", "StartUp Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (dr == DialogResult.Yes)
@@ -45,8 +76,8 @@ namespace StartupManager
                 this.Close();
             }
             
-        }
-
+        }*/
+        
 
         private void btnAjuda_Click(object sender, EventArgs e)
         {
@@ -59,6 +90,7 @@ namespace StartupManager
             if (u.Cargo != "CEO")
             {
                 btnSalvar.Visible = false;
+                btnExcluir.Visible = false;
                 txtCanais.Enabled = false;
                 txtEstruturaDeCustos.Enabled = false;
                 txtFontesDeReceita.Enabled = false;
@@ -69,6 +101,50 @@ namespace StartupManager
                 txtRecursos.Enabled = false;
                 txtSegmentoDeClientes.Enabled = false;
                 txtAtividadesPrincipais.Enabled = false;
+            }
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if (validar())
+            {
+                if (modelCanvas.Alteracao(idProjeto))
+                {
+                    lblNomeProjeto.Text = "foi";
+                }
+                /*if (id == 0)
+                {
+                    try
+                    {
+                        pegaCampos();
+
+                        model.Insert(p);
+                        MessageBox.Show("Dados salvos com sucesso!", "StartUpManager 72B",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    catch (Exception er)
+                    {
+                        MessageBox.Show("Erro de execução da QUERY !!! " + er.Message, "StartUpManager 72B",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        pegaCampos();
+                        model.Update(p);
+                        MessageBox.Show("Projeto Alterado");
+                        this.Close();
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show("Erro de execução da QUERY na alteracao !!! " + exception.Message, "StartUpManager 72B",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }*/
+
             }
         }
     }
