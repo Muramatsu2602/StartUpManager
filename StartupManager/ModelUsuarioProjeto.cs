@@ -21,7 +21,7 @@ namespace StartupManager
                 String sql = "SELECT up.id_usuario AS \"ID\", u.nome AS \"NOME\",u.cargo AS \"CARGO\", u.email AS \"E-MAIL\", up.data_inclusao AS \"INCLUSÃO\" ";
                 sql += " FROM usuario_projeto AS up";
                 sql += " INNER JOIN usuario AS u ON (u.id_user = up.id_usuario)";
-                sql += " WHERE up.id_projeto=" + idProjeto + ";";
+                sql += " WHERE up.id_projeto=" + idProjeto + " AND up.data_exclusao IS NULL;";
                 dt = ConexaoBanco.SelecionarDataTable(sql);
             }
             catch (Exception ex)
@@ -46,6 +46,24 @@ namespace StartupManager
 
             ConexaoBanco.Executar(sql, param);
             ConexaoBanco.Desconectar();
+        }
+
+        public void Excluir(int id)
+        {
+            try
+            {
+                ConexaoBanco.Conectar();
+                String sql = "UPDATE usuario_projeto SET data_exclusao= " + "'" + DateTime.Now + "'" + "WHERE id_usuario = " + id + ";";
+                ConexaoBanco.Executar(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir o Serviço !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                ConexaoBanco.Desconectar();
+            }
         }
     }
 }

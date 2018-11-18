@@ -42,12 +42,12 @@
             // 
             this.lblNomeProjeto.AutoSize = true;
             this.lblNomeProjeto.BackColor = System.Drawing.SystemColors.Control;
-            this.lblNomeProjeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeProjeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeProjeto.ForeColor = System.Drawing.Color.Blue;
             this.lblNomeProjeto.Location = new System.Drawing.Point(91, 89);
             this.lblNomeProjeto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomeProjeto.Name = "lblNomeProjeto";
-            this.lblNomeProjeto.Size = new System.Drawing.Size(24, 20);
+            this.lblNomeProjeto.Size = new System.Drawing.Size(28, 24);
             this.lblNomeProjeto.TabIndex = 0;
             this.lblNomeProjeto.Text = "...";
             // 
@@ -98,12 +98,14 @@
             this.dgvEquipe.AllowUserToAddRows = false;
             this.dgvEquipe.AllowUserToDeleteRows = false;
             this.dgvEquipe.AllowUserToOrderColumns = true;
+            this.dgvEquipe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEquipe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEquipe.Location = new System.Drawing.Point(12, 193);
             this.dgvEquipe.Name = "dgvEquipe";
             this.dgvEquipe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEquipe.Size = new System.Drawing.Size(776, 369);
             this.dgvEquipe.TabIndex = 5;
+            this.dgvEquipe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEquipe_CellContentClick);
             // 
             // btnExcluir
             // 

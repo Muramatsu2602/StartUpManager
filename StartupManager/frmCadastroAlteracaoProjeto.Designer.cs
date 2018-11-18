@@ -104,7 +104,7 @@
             // 
             this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvar.Depth = 0;
-            this.btnSalvar.Location = new System.Drawing.Point(12, 510);
+            this.btnSalvar.Location = new System.Drawing.Point(11, 387);
             this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Primary = true;
@@ -143,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 575);
+            this.ClientSize = new System.Drawing.Size(461, 445);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblNomeCEO);
             this.Controls.Add(this.lblIdCEO);

@@ -55,7 +55,7 @@ namespace StartupManager
                 DialogResult dr = MessageBox.Show("Deseja realmente EXCLUIR ?", "StartUp Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (dr == DialogResult.Yes)
                 {
-                    //model.Excluir(id);
+                    model.Excluir(id);
                     CarregaGrid();
                 }
             }
@@ -63,6 +63,8 @@ namespace StartupManager
             {
                 MessageBox.Show("Selecione apenas um registro !!");
             }
+            CarregaGrid();
+
         }
 
         private void btnAdiciona_Click(object sender, EventArgs e)
@@ -83,6 +85,11 @@ namespace StartupManager
                 MessageBox.Show("Erro em adicionar colaborador!Mais detalhes \n" + er.Message);
 
             }
+
+        }
+
+        private void dgvEquipe_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
