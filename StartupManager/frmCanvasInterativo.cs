@@ -23,6 +23,7 @@ namespace StartupManager
             InitializeComponent();
             this.u = u;
             idProjeto = id;
+            InterfaceUsuario();
             if (modelCanvas.ExisteCanvas(idProjeto))
                 preencheCampos();
         }
@@ -58,30 +59,30 @@ namespace StartupManager
             canvas.RecursosChave = txtRecursos.Text;
             canvas.Relacionamento = txtRelacionamentoComClientes.Text;
             canvas.SegmentoChave = txtSegmentoDeClientes.Text;
-            canvas.UltimaAlteracao = DateTime.Now.ToString("dd/MM/yyyy");
+            canvas.UltimaAlteracao = DateTime.Now;
             canvas.Atividade_chave = txtAtividadesPrincipais.Text;
         }
         private bool validar()
         {
-            if (!(String.IsNullOrWhiteSpace(txtAtividadesPrincipais.Text)))
+            if (!(String.IsNullOrWhiteSpace(txtAtividadesPrincipais.Text)) || txtAtividadesPrincipais.Text.Length <=2000 )
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtCanais.Text)))
+            if (!(String.IsNullOrWhiteSpace(txtCanais.Text)) || txtCanais.Text.Length <=2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtEstruturaDeCustos.Text)))
+            if (!(String.IsNullOrWhiteSpace(txtEstruturaDeCustos.Text)) || txtEstruturaDeCustos.Text.Length <=2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtFontesDeReceita.Text)))
+            if (!(String.IsNullOrWhiteSpace(txtFontesDeReceita.Text)) || txtFontesDeReceita.Text.Length <=2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtPrincipaisParcerias.Text)))
+            if (!(String.IsNullOrWhiteSpace(txtPrincipaisParcerias.Text)) || txtPrincipaisParcerias.Text.Length <=2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtPropostaDeValor.Text)))
+            if (!(String.IsNullOrWhiteSpace(txtPropostaDeValor.Text)) || txtPropostaDeValor.Text.Length <=2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtRecursos.Text)))
+            if (!(String.IsNullOrWhiteSpace(txtRecursos.Text)) || txtRecursos.Text.Length <=2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtRelacionamentoComClientes.Text)))
+            if (!(String.IsNullOrWhiteSpace(txtRelacionamentoComClientes.Text)) || txtRelacionamentoComClientes.Text.Length <=2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtSegmentoDeClientes.Text)))
+            if (!(String.IsNullOrWhiteSpace(txtSegmentoDeClientes.Text)) || txtSegmentoDeClientes.Text.Length <=2000)
                 return true;
-            MessageBox.Show("Um campo obrigatoriamente deve estar preenchido");
+            MessageBox.Show("Um campo obrigatoriamente deve estar preenchido e com menos de 2000 caracteres");
             return false;
         }
         

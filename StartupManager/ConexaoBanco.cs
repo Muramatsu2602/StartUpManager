@@ -18,7 +18,7 @@ namespace StartupManager
             "Port = 5432;" +
             "Database = startupManager;" +
             "User ID = postgres;" +
-            "password = 1;";//escola:sqladmin;
+            "password = sqladmin;";//escola:sqladmin;
 
         static NpgsqlConnection cn = new NpgsqlConnection();
 

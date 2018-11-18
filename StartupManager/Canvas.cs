@@ -17,7 +17,7 @@ namespace StartupManager
         private String recursosChave;
         private String estruturaDados;
         private String fonteReceita;
-        private String ultimaAlteracao;
+        private DateTime ultimaAlteracao;
 
         public int IdCanvas { get => idCanvas; set => idCanvas = value; }
         public string PropostaDeValor { get => propostaDeValor; set => propostaDeValor = value; }
@@ -29,7 +29,7 @@ namespace StartupManager
         public string EstruturaDados { get => estruturaDados; set => estruturaDados = value; }
         public string FonteReceita { get => fonteReceita; set => fonteReceita = value; }
         public string Atividade_chave { get; set; }
-        public string UltimaAlteracao { get => ultimaAlteracao; set => ultimaAlteracao = value; }
+        public DateTime UltimaAlteracao { get => ultimaAlteracao; set => ultimaAlteracao = value; }
 
     }
 }

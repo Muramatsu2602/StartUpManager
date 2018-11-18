@@ -59,10 +59,9 @@
             this.txtFontesDeReceita = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.btnSalvar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label10 = new System.Windows.Forms.Label();
             this.btnAjuda = new System.Windows.Forms.Button();
-            this.btnSalvar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -74,7 +73,6 @@
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl1
@@ -491,19 +489,35 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.BackColor = System.Drawing.Color.White;
-            this.panel10.Controls.Add(this.tableLayoutPanel2);
+            this.panel10.Controls.Add(this.btnSalvar);
             this.panel10.Controls.Add(this.label10);
             this.panel10.Location = new System.Drawing.Point(411, 443);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(198, 214);
             this.panel10.TabIndex = 11;
             // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.Depth = 0;
+            this.btnSalvar.Location = new System.Drawing.Point(7, 84);
+            this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Primary = true;
+            this.btnSalvar.Size = new System.Drawing.Size(186, 69);
+            this.btnSalvar.TabIndex = 69;
+            this.btnSalvar.Text = "SALVAR";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
             // label10
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(5, 9);
+            this.label10.Location = new System.Drawing.Point(5, 6);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(192, 45);
             this.label10.TabIndex = 6;
@@ -522,38 +536,6 @@
             this.btnAjuda.Text = "?";
             this.btnAjuda.UseVisualStyleBackColor = false;
             this.btnAjuda.Click += new System.EventHandler(this.btnAjuda_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.Depth = 0;
-            this.btnSalvar.Location = new System.Drawing.Point(3, 60);
-            this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Primary = true;
-            this.btnSalvar.Size = new System.Drawing.Size(186, 51);
-            this.btnSalvar.TabIndex = 69;
-            this.btnSalvar.Text = "SALVAR";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.btnSalvar, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 88);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(192, 114);
-            this.tableLayoutPanel2.TabIndex = 71;
             // 
             // frmCanvasInterativo
             // 
@@ -592,7 +574,6 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -632,7 +613,6 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnAjuda;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalvar;
     }
 }
