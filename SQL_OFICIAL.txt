@@ -1,3 +1,27 @@
+create sequence id_usuario_seq
+    INCREMENT 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    START 1
+    CACHE 1;
+create sequence id_canvas_seq
+    INCREMENT 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    START 1
+    CACHE 1;
+create sequence projeto_id_projeto_seq
+    INCREMENT 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    START 1
+    CACHE 1;
+create sequence usuario_projeto_id_seq
+    INCREMENT 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    START 1
+    CACHE 1;
 CREATE TABLE public.canvas
 (
     id_canvas bigint DEFAULT nextval('id_canvas_seq'::regclass),
