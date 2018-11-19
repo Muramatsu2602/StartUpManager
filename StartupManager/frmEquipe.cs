@@ -37,9 +37,14 @@ namespace StartupManager
         private void CarregaUsuarios()
         {
             ModelUsuario mu = new ModelUsuario();
-            cmbColaboradores.DataSource = mu.listarTodos();
+            DataTable dt = mu.listarLivres(idProjeto);
+            cmbColaboradores.DataSource = dt;
             cmbColaboradores.ValueMember = "ID";
             cmbColaboradores.DisplayMember = "NOME";
+            if (dt.Rows.Count == 0)
+            {
+                btnAdiciona.Enabled = false;
+            }
         }
 
         private void frmEquipe_Load(object sender, EventArgs e)
@@ -69,7 +74,6 @@ namespace StartupManager
 
         private void btnAdiciona_Click(object sender, EventArgs e)
         {
-
             try
             {
                 usuarioProjeto = new UsuarioProjeto();
@@ -79,6 +83,7 @@ namespace StartupManager
 
                 MessageBox.Show("Colaborador adicionado com Sucesso!!");
                 CarregaGrid();
+                CarregaUsuarios();
             }
             catch (Exception er)
             {

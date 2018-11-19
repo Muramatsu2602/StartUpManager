@@ -17,10 +17,12 @@ namespace StartupManager
             {
                 ConexaoBanco.Conectar();
 
-                String sql = "SELECT p.id_projeto AS  \"ID\", p.nome AS \"NOME\",p.data_criacao AS  \"CRIAÇÃO \", u.nome AS  \"CEO \" FROM projeto AS \"p\" ";
-                sql += " INNER JOIN usuario AS \"u\" ON (u.id_user = p.id_ceo)";
-                sql += " WHERE id_ceo= " + u.IdUser + " AND data_excluido IS NULL ;";
-
+                String sql = "SELECT p.id_projeto AS  \"ID\", p.nome AS \"NOME\",p.data_criacao AS  \"CRIAÇÃO\", u.nome AS  \"CEO\" " +
+                            " FROM projeto AS p" +
+                            " RIGHT JOIN usuario AS u ON(u.id_user = p.id_ceo) " +
+                            " WHERE (p.id_ceo = " + u.IdUser + " OR p.id_projeto = (SELECT id_projeto FROM usuario_projeto WHERE id_usuario = " + u.IdUser + "))" +
+                            "	AND p.data_excluido IS NULL; ";
+                Console.WriteLine(sql);
                 dt = ConexaoBanco.SelecionarDataTable(sql);
             }
             catch (Exception ex)
@@ -31,7 +33,7 @@ namespace StartupManager
             return dt;
         }
 
-       
+
         public void Insert(Projeto p)
         {
             string sql = "insert into projeto" +

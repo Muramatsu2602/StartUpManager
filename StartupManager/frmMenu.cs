@@ -40,7 +40,7 @@ namespace StartupManager
             if (dgvDados.SelectedRows.Count == 1)
             {
                 int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
-                frmCanvasInterativo canvas = new frmCanvasInterativo(u, id);
+                frmCanvasInterativo canvas = new frmCanvasInterativo(id);
                 canvas.ShowDialog();
             }
             else

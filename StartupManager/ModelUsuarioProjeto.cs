@@ -17,8 +17,7 @@ namespace StartupManager
             {
                 ConexaoBanco.Conectar();
 
-
-                String sql = "SELECT up.id_usuario AS \"ID\", u.nome AS \"NOME\",u.cargo AS \"CARGO\", u.email AS \"E-MAIL\", up.data_inclusao AS \"INCLUSÃO\" ";
+                String sql ="SELECT up.id AS \"ID\", u.nome AS \"NOME\",u.cargo AS \"CARGO\", u.email AS \"E-MAIL\", up.data_inclusao AS \"INCLUSÃO\" ";
                 sql += " FROM usuario_projeto AS up";
                 sql += " INNER JOIN usuario AS u ON (u.id_user = up.id_usuario)";
                 sql += " WHERE up.id_projeto=" + idProjeto + " AND up.data_exclusao IS NULL;";
@@ -53,7 +52,7 @@ namespace StartupManager
             try
             {
                 ConexaoBanco.Conectar();
-                String sql = "UPDATE usuario_projeto SET data_exclusao= " + "'" + DateTime.Now + "'" + "WHERE id_usuario = " + id + ";";
+                String sql = "UPDATE usuario_projeto SET data_exclusao= " + "'" + DateTime.Now + "'" + "WHERE id = " + id + ";";
                 ConexaoBanco.Executar(sql);
             }
             catch (Exception ex)

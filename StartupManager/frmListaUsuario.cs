@@ -24,7 +24,7 @@ namespace StartupManager
                 btnAlterar.Visible = false;
                 btnExcluir.Visible = false;
             }
-         
+
             CarregaGrid();
             cmbCampo.SelectedIndex = 1;
         }
@@ -37,7 +37,7 @@ namespace StartupManager
         private void btnCanvas_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value.ToString());
-            frmCanvasInterativo canvas = new frmCanvasInterativo(u, id);
+            frmCanvasInterativo canvas = new frmCanvasInterativo(id);
             canvas.ShowDialog();
         }
 
@@ -103,8 +103,8 @@ namespace StartupManager
 
             try
             {
-              
-               dgvDados.DataSource = up.BuscaPorCampo(cmbCampo.SelectedItem.ToString(), txtConsulta.Text.ToUpper());
+
+                dgvDados.DataSource = up.BuscaPorCampo(cmbCampo.SelectedItem.ToString(), txtConsulta.Text.ToUpper());
 
             }
             catch (Exception exception)

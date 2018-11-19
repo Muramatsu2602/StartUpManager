@@ -8,7 +8,7 @@ namespace StartupManager
 {
     class Canvas
     {
-        private int idCanvas;
+        private Int64 idCanvas;
         private String propostaDeValor;
         private String relacionamento;
         private String canais;
@@ -18,8 +18,9 @@ namespace StartupManager
         private String estruturaDados;
         private String fonteReceita;
         private DateTime ultimaAlteracao;
+        private Int64 idProjeto;
 
-        public int IdCanvas { get => idCanvas; set => idCanvas = value; }
+        public Int64 IdCanvas { get => idCanvas; set => idCanvas = value; }
         public string PropostaDeValor { get => propostaDeValor; set => propostaDeValor = value; }
         public string Relacionamento { get => relacionamento; set => relacionamento = value; }
         public string Canais { get => canais; set => canais = value; }
@@ -30,6 +31,6 @@ namespace StartupManager
         public string FonteReceita { get => fonteReceita; set => fonteReceita = value; }
         public string Atividade_chave { get; set; }
         public DateTime UltimaAlteracao { get => ultimaAlteracao; set => ultimaAlteracao = value; }
-
+        public long IdProjeto { get => idProjeto; set => idProjeto = value; }
     }
 }

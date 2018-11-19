@@ -11,51 +11,55 @@ namespace StartupManager
 {
     class ModelCanvas
     {
-        public bool ExisteCanvas(int idProjeto)
+
+        public Canvas BuscaId(Int64 idProjeto)
         {
-            bool recebe = false;
+            Canvas p = null;
             try
             {
                 ConexaoBanco.Conectar();
 
-                String sql = "SELECT id_projeto FROM canvas WHERE id_projeto = " + idProjeto + ";";
-                return recebe = ((ConexaoBanco.SelecionarDataTable(sql).Rows.Count) > 0) ? true : false;
+                String sql = "SELECT * FROM canvas WHERE id_projeto= @1";
+                List<object> param = new List<object>();
+                param.Add(idProjeto);
+                var dados = ConexaoBanco.Selecionar(sql, param);
+                if (dados.Read())
+                {
+                    p = new Canvas();
+                    p.IdCanvas = Int64.Parse(dados["id_canvas"].ToString());
+                    p.PropostaDeValor = (string)dados["proposta_de_valor"];
+                    p.Relacionamento = (string)dados["relacionamento"];
+                    p.Canais = (string)dados["canais"];
+                    p.SegmentoChave = (string)dados["segmento_cliente"];
+                    p.ParceriasChave = (string)dados["parcerias_chave"];
+                    p.Atividade_chave = (string)dados["atividade_chave"];
+                    p.RecursosChave = (string)dados["recursos_chave"];
+                    p.EstruturaDados = (string)dados["estrura_dados"];
+                    p.FonteReceita = (string)dados["fonte_receita"];
+                    p.IdProjeto = Int64.Parse(dados["id_projeto"].ToString());
+                    p.UltimaAlteracao = DateTime.Parse(dados["ultima_alteracao"].ToString());
+
+                }
+
 
             }
-            catch (NpgsqlException ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao buscar todos os registros !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao buscar Projeto de ID:  " + idProjeto + "\n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 ConexaoBanco.Desconectar();
             }
-            return recebe;
+
+            return p;
         }
-        public DataTable DataReader(int idProjeto)
-        {
-            DataTable dataTable = new DataTable();
-            try
-            {
-                string sql = "SELECT id_canvas, proposta_de_valor, relacionamento, canais, segmento_cliente, parcerias_chave, atividade_chave, recursos_chave, estrura_dados, fonte_receita, id_projeto";
-                sql += " FROM canvas WHERE id_projeto = " + idProjeto + ";";
-                dataTable = ConexaoBanco.SelecionarDataTable(sql);
-            }
-            catch (NpgsqlException erro)
-            {
-                MessageBox.Show("Erro ao buscar todos os registros !!! \n" + erro.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                ConexaoBanco.Desconectar();
-            }
-            return dataTable;
-        }
-        public void Insert(Canvas c, int id)
+
+        public void Insert(Canvas c)
         {
             string sql = "INSERT INTO canvas" +
-                         "(canais, fonte_receita, estrura_dados, parcerias_chave, proposta_de_valor, recursos_chave, relacionamento, segmento_cliente, atividade_chave, id_projeto)" +
-                         "VALUES(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10);";
+                         "(canais, fonte_receita, estrura_dados, parcerias_chave, proposta_de_valor, recursos_chave, relacionamento, segmento_cliente, atividade_chave, id_projeto, ultima_alteracao)" +
+                         "VALUES(@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11);";
             try
             {
                 List<object> param = new List<object>();
@@ -68,14 +72,16 @@ namespace StartupManager
                 param.Add(c.Relacionamento);
                 param.Add(c.SegmentoChave);
                 param.Add(c.Atividade_chave);
-                param.Add(id);
+                param.Add(c.IdProjeto);
+                param.Add(DateTime.Now);
+
                 ConexaoBanco.Executar(sql, param);
                 MessageBox.Show("Canvas salvo com sucesso!", "StartUpManager 72B",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (NpgsqlException erro)
             {
-                MessageBox.Show("Erro ao buscar todos os registros !!! \n" + erro.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao Salvar todos os registros !!! \n" + erro.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -83,7 +89,7 @@ namespace StartupManager
             }
 
         }
-        public void Upadate(Canvas c, int id)
+        public void Update(Canvas c)
         {
             try
             {
@@ -97,7 +103,7 @@ namespace StartupManager
                 param.Add(c.RecursosChave);
                 param.Add(c.EstruturaDados);
                 param.Add(c.FonteReceita);
-                param.Add(c.UltimaAlteracao);
+                param.Add(DateTime.Now);
                 String sql = "UPDATE canvas SET ";
                 sql += "proposta_de_valor = @1, ";
                 sql += "relacionamento = @2, ";
@@ -109,15 +115,14 @@ namespace StartupManager
                 sql += "estrura_dados = @8, ";
                 sql += "fonte_receita = @9, ";
                 sql += "ultima_alteracao = @10 ";
-                //sql += "ultima_alteracao = "+ DateTime.Now;
-                sql += "WHERE id_projeto = " + id;
+                sql += "WHERE id_canvas = " + c.IdCanvas;
                 ConexaoBanco.Executar(sql, param);
-                MessageBox.Show("Canvas salvo com sucesso!", "StartUpManager 72B",
+                MessageBox.Show("Canvas Atualizado com sucesso!", "StartUpManager 72B",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (NpgsqlException erro)
             {
-                MessageBox.Show("Erro ao buscar todos os registros !!! \n" + erro.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao Atualizar todos os registros !!! \n" + erro.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

@@ -14,18 +14,35 @@ namespace StartupManager
     public partial class frmCanvasInterativo : MaterialSkin.Controls.MaterialForm
 
     {
-        private Usuario u;
-        private Canvas canvas = new Canvas();
+        private Canvas canvas;
+        private Projeto projeto;
         private int idProjeto;
         private ModelCanvas modelCanvas = new ModelCanvas();
-        public frmCanvasInterativo(Usuario u, int id)
+        private ModelProjeto modelProjeto = new ModelProjeto();
+        public frmCanvasInterativo(int id)
         {
             InitializeComponent();
-            this.u = u;
             idProjeto = id;
-            InterfaceUsuario();
-            if (modelCanvas.ExisteCanvas(idProjeto))
+
+            //Busca para saber se existe um canvas
+            canvas = modelCanvas.BuscaId(idProjeto);
+
+            //Pega os dados do projeto
+            projeto = modelProjeto.BuscaId(idProjeto);
+
+            lblNomeProjeto.Text = projeto.Nome;
+
+            if (canvas != null)
+            {
                 preencheCampos();
+                lblUltimaAtualizacao.Text = canvas.UltimaAlteracao.ToString("dd/MM/yyyy");
+            }
+            else
+            {
+                canvas = new Canvas();
+                canvas.IdProjeto = idProjeto;
+                lblUltimaAtualizacao.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            }
         }
         private void frmCanvasInterativo_Load(object sender, EventArgs e)
         {
@@ -33,16 +50,15 @@ namespace StartupManager
         }
         private void preencheCampos()
         {
-            DataTable dataTable = modelCanvas.DataReader(idProjeto);
-            txtCanais.Text = dataTable.Rows[0][3].ToString();
-            txtEstruturaDeCustos.Text = dataTable.Rows[0][8].ToString();
-            txtFontesDeReceita.Text = dataTable.Rows[0][9].ToString();
-            txtPrincipaisParcerias.Text = dataTable.Rows[0][5].ToString();
-            txtPropostaDeValor.Text = dataTable.Rows[0][1].ToString();
-            txtRecursos.Text = dataTable.Rows[0][7].ToString();
-            txtRelacionamentoComClientes.Text = dataTable.Rows[0][2].ToString();
-            txtSegmentoDeClientes.Text = dataTable.Rows[0][4].ToString();
-            txtAtividadesPrincipais.Text = dataTable.Rows[0][6].ToString();
+            txtCanais.Text = canvas.Canais;
+            txtEstruturaDeCustos.Text = canvas.EstruturaDados;
+            txtFontesDeReceita.Text = canvas.FonteReceita;
+            txtPrincipaisParcerias.Text = canvas.ParceriasChave;
+            txtPropostaDeValor.Text = canvas.PropostaDeValor;
+            txtRecursos.Text = canvas.RecursosChave;
+            txtRelacionamentoComClientes.Text = canvas.Relacionamento;
+            txtSegmentoDeClientes.Text = canvas.SegmentoChave;
+            txtAtividadesPrincipais.Text = canvas.Atividade_chave;
         }
         private void btnAjudaCanvas_Click(object sender, EventArgs e)
         {
@@ -59,70 +75,52 @@ namespace StartupManager
             canvas.RecursosChave = txtRecursos.Text;
             canvas.Relacionamento = txtRelacionamentoComClientes.Text;
             canvas.SegmentoChave = txtSegmentoDeClientes.Text;
-            canvas.UltimaAlteracao = DateTime.Now;
             canvas.Atividade_chave = txtAtividadesPrincipais.Text;
         }
         private bool validar()
         {
-            if (!(String.IsNullOrWhiteSpace(txtAtividadesPrincipais.Text)) || txtAtividadesPrincipais.Text.Length <=2000 )
+            if (!(String.IsNullOrWhiteSpace(txtAtividadesPrincipais.Text)) || txtAtividadesPrincipais.Text.Length <= 2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtCanais.Text)) || txtCanais.Text.Length <=2000)
+            if (!(String.IsNullOrWhiteSpace(txtCanais.Text)) || txtCanais.Text.Length <= 2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtEstruturaDeCustos.Text)) || txtEstruturaDeCustos.Text.Length <=2000)
+            if (!(String.IsNullOrWhiteSpace(txtEstruturaDeCustos.Text)) || txtEstruturaDeCustos.Text.Length <= 2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtFontesDeReceita.Text)) || txtFontesDeReceita.Text.Length <=2000)
+            if (!(String.IsNullOrWhiteSpace(txtFontesDeReceita.Text)) || txtFontesDeReceita.Text.Length <= 2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtPrincipaisParcerias.Text)) || txtPrincipaisParcerias.Text.Length <=2000)
+            if (!(String.IsNullOrWhiteSpace(txtPrincipaisParcerias.Text)) || txtPrincipaisParcerias.Text.Length <= 2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtPropostaDeValor.Text)) || txtPropostaDeValor.Text.Length <=2000)
+            if (!(String.IsNullOrWhiteSpace(txtPropostaDeValor.Text)) || txtPropostaDeValor.Text.Length <= 2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtRecursos.Text)) || txtRecursos.Text.Length <=2000)
+            if (!(String.IsNullOrWhiteSpace(txtRecursos.Text)) || txtRecursos.Text.Length <= 2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtRelacionamentoComClientes.Text)) || txtRelacionamentoComClientes.Text.Length <=2000)
+            if (!(String.IsNullOrWhiteSpace(txtRelacionamentoComClientes.Text)) || txtRelacionamentoComClientes.Text.Length <= 2000)
                 return true;
-            if (!(String.IsNullOrWhiteSpace(txtSegmentoDeClientes.Text)) || txtSegmentoDeClientes.Text.Length <=2000)
+            if (!(String.IsNullOrWhiteSpace(txtSegmentoDeClientes.Text)) || txtSegmentoDeClientes.Text.Length <= 2000)
                 return true;
             MessageBox.Show("Um campo obrigatoriamente deve estar preenchido e com menos de 2000 caracteres");
             return false;
         }
-        
+
         private void btnAjuda_Click(object sender, EventArgs e)
         {
             frmAjudaCanvas ajuda = new frmAjudaCanvas();
             ajuda.ShowDialog();
         }
 
-        private void InterfaceUsuario()
-        {
-            if (u.Cargo != "CEO")
-            {
-                btnSalvar.Visible = false;
-                txtCanais.Enabled = false;
-                txtEstruturaDeCustos.Enabled = false;
-                txtFontesDeReceita.Enabled = false;
-                txtPrincipaisParcerias.Enabled = false;
-                txtPropostaDeValor.Enabled = false;
-                txtRecursos.Enabled = false;
-                txtRelacionamentoComClientes.Enabled = false;
-                txtRecursos.Enabled = false;
-                txtSegmentoDeClientes.Enabled = false;
-                txtAtividadesPrincipais.Enabled = false;
-            }
-        }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             if (validar())
             {
-                if (modelCanvas.ExisteCanvas(idProjeto))
+                if (canvas.IdCanvas != 0)
                 {
                     pegaCampos();
-                    modelCanvas.Upadate(canvas, idProjeto);                   
+                    modelCanvas.Update(canvas);
                     this.Close();
                 }
                 else
                 {
                     pegaCampos();
-                    modelCanvas.Insert(canvas, idProjeto);
+                    modelCanvas.Insert(canvas);
                     this.Close();
                 }
 

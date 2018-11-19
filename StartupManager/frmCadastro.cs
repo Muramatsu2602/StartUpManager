@@ -19,7 +19,7 @@ namespace StartupManager
         Usuario u;
         public bool verifica = false;
         private int id;
-        private frmListaUsuario listagem;
+        private frmMenu listagem;
         private ModelUsuario model;
         public frmCadastro(int id)
         {
@@ -93,18 +93,11 @@ namespace StartupManager
                     pegaCampos();
                     try
                     {
-                        frmLogin login = new frmLogin();
+                       // frmLogin login = new frmLogin();
                         ModelUsuario i = new ModelUsuario();
                         i.Insert(u);
-                        MessageBox.Show("Dados salvos com sucesso!", "StartUpManager 72B",
+                        MessageBox.Show("Dados salvos com sucesso! Prossiga com o Login", "StartUpManager 72B",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (verifica)
-                        {
-                            login.Show();
-
-                        }
-                        listagem = new frmListaUsuario(null);
-                        listagem.CarregaGrid();
                         this.Close();
 
 
@@ -221,8 +214,8 @@ namespace StartupManager
             if (id == 0)
             {
                 model = new ModelUsuario();
-               
-                DataTable dt =  model.BuscaPorCampo("cpf", mskCPF.Text);
+
+                DataTable dt = model.BuscaPorCampo("cpf", mskCPF.Text);
                 if (dt.Rows.Count > 0)
                 {
                     MessageBox.Show("Usuario Já Cadastrado !\nProcure um CEO!");

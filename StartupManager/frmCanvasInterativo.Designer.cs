@@ -62,6 +62,8 @@
             this.btnSalvar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label10 = new System.Windows.Forms.Label();
             this.btnAjuda = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblUltimaAtualizacao = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -502,7 +504,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvar.Depth = 0;
-            this.btnSalvar.Location = new System.Drawing.Point(7, 84);
+            this.btnSalvar.Location = new System.Drawing.Point(3, 133);
             this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Primary = true;
@@ -537,12 +539,36 @@
             this.btnAjuda.UseVisualStyleBackColor = false;
             this.btnAjuda.Click += new System.EventHandler(this.btnAjuda_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(761, 72);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(155, 19);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Ultima Atualização:";
+            // 
+            // lblUltimaAtualizacao
+            // 
+            this.lblUltimaAtualizacao.AutoSize = true;
+            this.lblUltimaAtualizacao.BackColor = System.Drawing.Color.White;
+            this.lblUltimaAtualizacao.Location = new System.Drawing.Point(922, 73);
+            this.lblUltimaAtualizacao.Name = "lblUltimaAtualizacao";
+            this.lblUltimaAtualizacao.Size = new System.Drawing.Size(88, 18);
+            this.lblUltimaAtualizacao.TabIndex = 7;
+            this.lblUltimaAtualizacao.Text = "00/00/0000";
+            this.lblUltimaAtualizacao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmCanvasInterativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.Controls.Add(this.lblUltimaAtualizacao);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnAjuda);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblNomeProjeto);
@@ -614,5 +640,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnAjuda;
         private MaterialSkin.Controls.MaterialRaisedButton btnSalvar;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblUltimaAtualizacao;
     }
 }

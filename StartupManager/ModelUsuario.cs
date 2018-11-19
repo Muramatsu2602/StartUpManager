@@ -47,6 +47,29 @@ namespace StartupManager
             ConexaoBanco.Desconectar();
             return dt;
         }
+        public DataTable listarLivres(Int64 idProjeto)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                ConexaoBanco.Conectar();
+
+                String sql = "SELECT id_user AS \"ID\", nome AS \"NOME\", email AS \"E-MAIL\",data_nasc AS \"NASCIMENTO\", cpf AS \"CPF\"," +
+                             " cargo AS \"CARGO\", sexo AS \"SEXO\" " +
+                             "FROM usuario ";
+                sql += " WHERE (id_user NOT IN (SELECT id_usuario AS id_user FROM usuario_projeto WHERE id_projeto = " + idProjeto + ") AND " +
+                    "id_user NOT IN (SELECT id_ceo AS id_user FROM projeto WHERE id_projeto = " + idProjeto + ")) AND" +
+                    " data_exclusao IS NULL ";
+                dt = ConexaoBanco.SelecionarDataTable(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao buscar todos os registros !!! \n" + ex.Message, "ERRO !!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            ConexaoBanco.Desconectar();
+            return dt;
+        }
+
 
         public Usuario BuscaId(Int64 id)
         {
