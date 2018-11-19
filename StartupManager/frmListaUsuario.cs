@@ -126,15 +126,6 @@ namespace StartupManager
            
         }
 
-        private void frmListaUsuario_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Deseja realmente SAIR ?", "StartUp Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (dr == DialogResult.Yes)
-            {
-                Application.Exit();
-
-            }
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -158,6 +149,20 @@ namespace StartupManager
         {
             System.Diagnostics.Process.Start("http://www.sebrae.com.br/sites/PortalSebrae");
            
+        }
+
+        private void frmListaUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                if(MessageBox.Show("Quer sair?",
+                       "StartUp Manager",
+                       MessageBoxButtons.OKCancel,
+                       MessageBoxIcon.Information) == DialogResult.OK)
+                    Environment.Exit(1);
+                else
+                    e.Cancel = true; 
+            }
         }
     }
 }

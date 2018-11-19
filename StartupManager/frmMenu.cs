@@ -27,12 +27,17 @@ namespace StartupManager
 
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Deseja realmente SAIR ?", "StartUp Manager", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (dr == DialogResult.Yes)
+            if (e.CloseReason == CloseReason.UserClosing)
             {
-                Application.Exit();
-            }    
-            
+                if (MessageBox.Show("Quer sair?",
+                       "StartUp Manager",
+                       MessageBoxButtons.OKCancel,
+                       MessageBoxIcon.Information) == DialogResult.OK)
+                    Environment.Exit(1);
+                else
+                    e.Cancel = true;
+            }
+
         }
 
         public void CarregaGrid()
@@ -193,7 +198,7 @@ namespace StartupManager
             CarregaGrid();
         }
 
-       
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -216,7 +221,9 @@ namespace StartupManager
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://www.sebrae.com.br/sites/PortalSebrae");
-           
+
         }
+
+
     }
 }
