@@ -34,6 +34,7 @@
             this.StartUpManager = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -64,7 +65,7 @@
             // 
             this.StartUpManager.AutoSize = true;
             this.StartUpManager.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartUpManager.Location = new System.Drawing.Point(-10, 15);
+            this.StartUpManager.Location = new System.Drawing.Point(-10, 0);
             this.StartUpManager.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.StartUpManager.Name = "StartUpManager";
             this.StartUpManager.Size = new System.Drawing.Size(375, 55);
@@ -86,13 +87,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 366);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(150, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 14);
+            this.label1.Size = new System.Drawing.Size(291, 21);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Designed By: Marcos Josué & Kenzo";
+            this.label1.Text = "Designed By: Marcos Josué && Kenzo";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(0, 345);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(545, 35);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar1.TabIndex = 4;
             // 
             // frmSplashScreen
             // 
@@ -100,6 +109,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(545, 380);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
@@ -125,5 +135,6 @@
         private System.Windows.Forms.Label StartUpManager;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
