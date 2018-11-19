@@ -171,34 +171,41 @@ namespace StartupManager
 
         private void btnPDF_Click(object sender, EventArgs e)
         {
-            using (var doc = new PdfSharp.Pdf.PdfDocument())
+            try
             {
-                var page = doc.AddPage();
-                var graphics = PdfSharp.Drawing.XGraphics.FromPdfPage(page);
-                var textFormatter = new PdfSharp.Drawing.Layout.XTextFormatter(graphics);
-                var font = new PdfSharp.Drawing.XFont("Arial", 10);
-                int cont = up.listarTodos().Rows.Count;
-                /*cont = 2;*/
-               int posicaoX = 20;
-               int[] posicaoY = {20,25,60,};
-               for (int i = 0; i < cont - 1; i++) 
-               {
-                   for (int j = 0; j < 7; j++) 
-                   {
-                       /*if (i == cont)
-                           break;*/
-                       textFormatter.DrawString(up.listarTodos().Rows[i][j].ToString(), font, PdfSharp.Drawing.XBrushes.Red, new PdfSharp.Drawing.XRect(posicaoX, , page.Width, page.Height));
+                using (var doc = new PdfSharp.Pdf.PdfDocument())
+                {
+                    var page = doc.AddPage();
+                    var graphics = PdfSharp.Drawing.XGraphics.FromPdfPage(page);
+                    var textFormatter = new PdfSharp.Drawing.Layout.XTextFormatter(graphics);
+                    var font = new PdfSharp.Drawing.XFont("Arial", 10);
+                    int cont = up.listarTodos().Rows.Count;
+                    /*cont = 2;*/
+                    int posicaoY = 20;
+                    int[] posicaoX = { 20, 25, 90, 160, 260, 340, 390 };
+                    for (int i = 0; i < cont - 1; i++)
+                    {
+                        for (int j = 0; j < 7; j++)
+                        {
+                            /*if (i == cont)
+                                break;*/
+                            textFormatter.DrawString(up.listarTodos().Rows[i][j].ToString(), font, PdfSharp.Drawing.XBrushes.Red, new PdfSharp.Drawing.XRect(posicaoX[j], posicaoY, page.Width, page.Height));
 
-                       posicaoX += 20;
+
+                        }
+                        posicaoY += 10;
+
+                        /*if (i == cont)
+                            break;*/
                     }
-                    posicaoX = 20;
-                    
-                    /*if (i == cont)
-                        break;*/
+                    doc.Save("arquivo.pdf");
+                    System.Diagnostics.Process.Start("arquivo.pdf");
                 }
-               doc.Save("arquivo.pdf");
-               System.Diagnostics.Process.Start("arquivo.pdf");
-           }
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
           /*  Document documento = new Document(PageSize.A4, 5, 5, 15, 15);
             PdfWriter.GetInstance(documento, new Fil(HttpContext.Current.Server.MapPath("~/documento.pdf"), FileMode.Create));
             documento.Open();
