@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 
 namespace StartupManager
@@ -18,6 +19,8 @@ namespace StartupManager
     public partial class frmLogin : MaterialSkin.Controls.MaterialForm
     {
         private Usuario u;
+        private Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+
         private void frmCadastro_Load(object sender, EventArgs e)
         {
             try
@@ -69,7 +72,7 @@ namespace StartupManager
 
             // teste de consistencia basico (enquanto nao há verificacao real do  bd)
 
-            if (!String.IsNullOrWhiteSpace(txtEmail.Text))
+            if (!String.IsNullOrWhiteSpace(txtEmail.Text) || rg.IsMatch(txtEmail.Text) )
             {
                 if (!String.IsNullOrWhiteSpace(txtSenha.Text))
                 {
@@ -119,7 +122,7 @@ namespace StartupManager
                     }
                     else
                     {
-                        MessageBox.Show("Colaborador não encontrado!", "StartUpManager 72B", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Colaborador não encontrado! Verifique os campos", "StartUpManager 72B", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         ConexaoBanco.Desconectar();
                         Limpa();
                     }
@@ -132,7 +135,7 @@ namespace StartupManager
             }
             else
             {
-                MessageBox.Show("Preencha o campo de e-mail!", "StartUpManager 72B", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Preencha o campo de e-mail! adequadamente", "StartUpManager 72B", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

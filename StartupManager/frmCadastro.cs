@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 namespace StartupManager
 {
@@ -16,7 +17,8 @@ namespace StartupManager
     {
 
         private bool novoCadastro = false;//É true na função novo Cadastro   
-        Usuario u;
+        private Usuario u;
+        private Regex rg = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
         public bool verifica = false;
         private int id;
         private frmMenu listagem;
@@ -93,7 +95,7 @@ namespace StartupManager
                     pegaCampos();
                     try
                     {
-                       // frmLogin login = new frmLogin();
+                        // frmLogin login = new frmLogin();
                         ModelUsuario i = new ModelUsuario();
                         i.Insert(u);
                         MessageBox.Show("Dados salvos com sucesso! Prossiga com o Login", "StartUpManager 72B",
@@ -168,11 +170,12 @@ namespace StartupManager
         }
         private bool validar()
         {
-            if (String.IsNullOrWhiteSpace(txtEmail.Text))
+            if (String.IsNullOrWhiteSpace(txtEmail.Text) || !rg.IsMatch(txtEmail.Text) )
             {
-                MessageBox.Show("Preencha o campo Email!");
+                MessageBox.Show("Preencha o campo Email adequadamente!");
                 return false;
 
+         
             }
             if (String.IsNullOrWhiteSpace(txtNome.Text))
             {
